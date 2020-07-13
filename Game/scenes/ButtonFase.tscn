@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Cyberoise.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/logoFase.png" type="Texture" id=2]
+[ext_resource path="res://scripts/ButtonFase.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.0929, 32.0597 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="ImageTexture" id=3]
+
+[node name="ButtonFase" type="KinematicBody2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 2 )
+text = "1"
+icon = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
