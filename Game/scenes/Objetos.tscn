@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Objetos.gd" type="Script" id=1]
 [ext_resource path="res://assets/Ponta.png" type="Texture" id=2]
+[ext_resource path="res://assets/tomada.png" type="Texture" id=3]
 
 [sub_resource type="ConcavePolygonShape2D" id=1]
 segments = PoolVector2Array( -34, 4, -7, 20, -34, -4, -4, -20, -33.5, 4, -33.5, -4, -10, -20, 12, -20, -10, 20, 12, 20, 13.5, 18, 13.5, -18, 14, -11, 32, -11, 14, -8, 32, -8, 14, 11, 32, 11, 14, 8, 32, 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 23.5266, 11.5648 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 24.1603
 
 [node name="Objetos" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,3 +23,21 @@ texture = ExtResource( 2 )
 
 [node name="Colisao" type="CollisionShape2D" parent="Ponta"]
 shape = SubResource( 1 )
+
+[node name="Tomada" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Tomada"]
+texture = ExtResource( 3 )
+
+[node name="Colisao" type="CollisionShape2D" parent="Tomada"]
+shape = SubResource( 3 )
+
+[node name="Magnetico" type="Area2D" parent="."]
+
+[node name="Colisao" type="CollisionShape2D" parent="Magnetico"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Magnetico"]
+[connection signal="body_entered" from="Tomada" to="." method="_on_Tomada_body_entered"]
+[connection signal="body_entered" from="Magnetico" to="." method="_on_Magnetico_body_entered"]
+[connection signal="body_exited" from="Magnetico" to="." method="_on_Magnetico_body_exited"]

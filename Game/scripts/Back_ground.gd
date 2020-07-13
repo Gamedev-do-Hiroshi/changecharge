@@ -1,9 +1,9 @@
 extends Node
 
-
 onready var X = preload("res://scenes/X.tscn")
 
 func _ready():
+	
 	
 	for i in 20:
 		for j in 12:

@@ -41,5 +41,9 @@ position = Vector2( 404, 73 )
 [node name="Carga4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 567, 76 )
 
-[node name="Objetos" parent="." instance=ExtResource( 4 )]
+[node name="Ponta" parent="." instance=ExtResource( 4 )]
 position = Vector2( 349.767, 236.879 )
+
+[node name="Tomada" parent="." instance=ExtResource( 4 )]
+position = Vector2( 694.909, 230.263 )
+Objeto = 1
