@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/Pivot.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Pivot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Carga.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Objetos.tscn" type="PackedScene" id=4]
 
 [node name="Fase" type="Node2D"]
 
@@ -39,3 +40,6 @@ position = Vector2( 404, 73 )
 
 [node name="Carga4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 567, 76 )
+
+[node name="Objetos" parent="." instance=ExtResource( 4 )]
+position = Vector2( 349.767, 236.879 )

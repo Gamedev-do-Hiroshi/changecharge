@@ -22,8 +22,10 @@ func _input(event):
 		$Sprite.animation = "positive" if sinal else "negative"
 	
 func _on_Carga_mouse_entered():
+	print("Entrou")
 	mouse_entrou = true
 
 
 func _on_Carga_mouse_exited():
+	print("Saiu")
 	mouse_entrou = false
