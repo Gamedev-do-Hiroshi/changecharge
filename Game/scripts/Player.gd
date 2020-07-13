@@ -37,6 +37,7 @@ func movimento(delta):
 	
 	ace += charge * campo_magnetico * vel.tangent()
 	
+	
 	if primeira_passada:
 		ant_ace = ace
 		primeira_passada = false
