@@ -5,19 +5,19 @@
 [ext_resource path="res://Sprites/Main Menu/Play Button.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Main Menu/Exit Button (2).png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Main Menu/lightning.png" type="Texture" id=5]
-[ext_resource path="res://scenes/Title_Screen.gd" type="Script" id=6]
+[ext_resource path="res://scripts/Title_Screen.gd" type="Script" id=6]
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id=2]
 background_mode = 4
 tonemap_mode = 3
 ss_reflections_fade_in = 1.47737
 ss_reflections_fade_out = 0.217638
 glow_enabled = true
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "twinkle"
 loop = true
 tracks/0/type = "value"
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 70
 font_data = ExtResource( 2 )
 
@@ -67,17 +67,17 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 616, 176 )
 scale = Vector2( 1.57812, 1.31534 )
 texture = ExtResource( 5 )
 offset = Vector2( 1.65045, 0.170807 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/twinkle = SubResource( 4 )
+anims/twinkle = SubResource( 3 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 modulate = Color( 0.960784, 0.0235294, 0.0235294, 1 )
@@ -85,7 +85,7 @@ margin_left = 493.0
 margin_top = 64.0
 margin_right = 760.0
 margin_bottom = 184.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]CHANGE"
 text = "CHANGE"
@@ -99,7 +99,7 @@ margin_left = 496.0
 margin_top = 112.0
 margin_right = 763.0
 margin_bottom = 320.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10 level = 5 ] CHARGE"
 text = " CHARGE"
