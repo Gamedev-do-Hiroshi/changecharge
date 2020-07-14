@@ -1,16 +1,23 @@
 tool
 extends Node2D
 
-enum OBJETO {PONTA, TOMADA, MAGNETICO}
+enum OBJETO {PONTA, TOMADA, MAGNETICO, PILHA}
 
 export(OBJETO) var Objeto = OBJETO.PONTA
 
 export var B = 10.0
 export var Altura = 50.0
 export var Comprimento = 50.0
+export var Carga = 10.0
+
 var ant_objeto
+var mouse_pilha = 0
+
+#se clicar na pilha 100 vezes vira um buraco negro
 
 onready var X = preload("res://scenes/X.tscn")
+onready var pilha_mais = preload("res://assets/pilha_mais.png")
+onready var pilha_menos = preload("res://assets/pilha_menos.png")
 
 func _ready():
 	
@@ -20,6 +27,7 @@ func _ready():
 		$Ponta.visible = true
 		$Tomada.visible = true
 		$Magnetico.visible = true
+		$Pilha.visible = true
 		for filho in $Magnetico.get_children():
 			if filho.get_class() != "CollisionShape2D":
 				filho.free()
@@ -36,6 +44,11 @@ func _ready():
 			$Tomada.visible = false
 		else:
 			$Tomada.free()
+	if Objeto != OBJETO.PILHA:
+		if Engine.editor_hint:
+			$Pilha.visible = false
+		else:
+			$Pilha.free()
 	if Objeto != OBJETO.MAGNETICO:
 		if Engine.editor_hint:
 			$Magnetico.visible = false
@@ -65,7 +78,9 @@ func _ready():
 				var s = X.instance()
 				s.position = Vector2(H + i*(16 + esph),V + j*(16+ espv))
 				$Magnetico.add_child(s)
-		pass
+	elif Objeto == OBJETO.PILHA:
+		$Pilha/Sprite.texture = pilha_mais if Carga > 0 else pilha_menos
+		mouse_pilha = 0
 	
 	pass
 
@@ -73,9 +88,17 @@ func _process(delta):
 		if Engine.editor_hint and Objeto != ant_objeto:
 			_ready()
 
+
+func _input(event):
+	if mouse_pilha%2 == 1 and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		Carga = -Carga
+		$Pilha/Sprite.texture = pilha_mais if Carga > 0 else pilha_menos
+
 func _on_Tomada_body_entered(body):
 	if body.get_groups().has("player"):
-		print("Passou de fase")
+		body.charge += Carga
+		if Engine.editor_hint == false:
+			self.queue_free()
 
 
 func _on_Magnetico_body_entered(body):
@@ -87,4 +110,18 @@ func _on_Magnetico_body_entered(body):
 func _on_Magnetico_body_exited(body):
 	if body.get_groups().has("player"):
 		body.campo_magnetico -= B
+		pass
+
+
+func _on_Pilha_mouse_entered():
+	mouse_pilha += 1
+	if mouse_pilha == 100:
+		#cria buraco negro
+		pass
+
+
+func _on_Pilha_mouse_exited():
+	mouse_pilha += 1
+	if mouse_pilha == 100:
+		#cria buraco negro
 		pass

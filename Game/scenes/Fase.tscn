@@ -9,6 +9,7 @@
 
 [node name="Campo" parent="." instance=ExtResource( 4 )]
 position = Vector2( 483.117, 73.6705 )
+Objeto = 2
 B = 0.05
 Altura = 500.0
 Comprimento = 500.0
@@ -54,3 +55,6 @@ Objeto = 0
 [node name="Tomada" parent="." instance=ExtResource( 4 )]
 position = Vector2( 694.909, 230.263 )
 Objeto = 1
+
+[node name="Pilha" parent="." instance=ExtResource( 4 )]
+position = Vector2( 431.646, 226.162 )
