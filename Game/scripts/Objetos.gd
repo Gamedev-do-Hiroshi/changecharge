@@ -1,4 +1,4 @@
-#tool
+tool
 extends Node2D
 
 enum OBJETO {PONTA, TOMADA, MAGNETICO}
@@ -8,17 +8,39 @@ export(OBJETO) var Objeto = OBJETO.PONTA
 export var B = 10.0
 export var Altura = 50.0
 export var Comprimento = 50.0
+var ant_objeto
 
 onready var X = preload("res://scenes/X.tscn")
 
 func _ready():
 	
+	ant_objeto = Objeto
+	
+	if Engine.editor_hint:
+		$Ponta.visible = true
+		$Tomada.visible = true
+		$Magnetico.visible = true
+		for filho in $Magnetico.get_children():
+			if filho.get_class() != "CollisionShape2D":
+				filho.free()
+				print(filho.get_class())
+			print(filho.get_class())
+		
 	if Objeto != OBJETO.PONTA:
-		$Ponta.free()
+		if Engine.editor_hint:
+			$Ponta.visible = false
+		else:
+			$Ponta.free()
 	if Objeto != OBJETO.TOMADA:
-		$Tomada.free()
+		if Engine.editor_hint:
+			$Tomada.visible = false
+		else:
+			$Tomada.free()
 	if Objeto != OBJETO.MAGNETICO:
-		$Magnetico.free()
+		if Engine.editor_hint:
+			$Magnetico.visible = false
+		else:
+			$Magnetico.free()
 	
 
 	if Objeto == OBJETO.MAGNETICO:
@@ -42,11 +64,14 @@ func _ready():
 			for j in nxv:
 				var s = X.instance()
 				s.position = Vector2(H + i*(16 + esph),V + j*(16+ espv))
-				add_child(s)
+				$Magnetico.add_child(s)
 		pass
 	
 	pass
 
+func _process(delta):
+		if Engine.editor_hint and Objeto != ant_objeto:
+			_ready()
 
 func _on_Tomada_body_entered(body):
 	if body.get_groups().has("player"):

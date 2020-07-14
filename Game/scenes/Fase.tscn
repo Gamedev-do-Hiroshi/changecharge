@@ -7,6 +7,12 @@
 
 [node name="Fase" type="Node2D"]
 
+[node name="Campo" parent="." instance=ExtResource( 4 )]
+position = Vector2( 483.117, 73.6705 )
+B = 0.05
+Altura = 500.0
+Comprimento = 500.0
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 485.126, 277.402 )
 
@@ -43,13 +49,8 @@ position = Vector2( 567, 76 )
 
 [node name="Ponta" parent="." instance=ExtResource( 4 )]
 position = Vector2( 349.767, 236.879 )
+Objeto = 0
 
 [node name="Tomada" parent="." instance=ExtResource( 4 )]
 position = Vector2( 694.909, 230.263 )
 Objeto = 1
-
-[node name="Campo" parent="." instance=ExtResource( 4 )]
-position = Vector2( 483.117, 73.6705 )
-Objeto = 2
-B = 0.1
-Altura = 100.0
