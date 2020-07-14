@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Play Button.png-1ac136e01082e3d2377236fa59b77e55.stex"
+path="res://.import/exit_button.png-0ebfe1588dac48d5285aac67d5d8668e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Main Menu/Play Button.png"
-dest_files=[ "res://.import/Play Button.png-1ac136e01082e3d2377236fa59b77e55.stex" ]
+source_file="res://Sprites/Main Menu/exit_button.png"
+dest_files=[ "res://.import/exit_button.png-0ebfe1588dac48d5285aac67d5d8668e.stex" ]
 
 [params]
 
