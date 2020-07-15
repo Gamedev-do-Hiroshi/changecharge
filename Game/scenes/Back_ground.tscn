@@ -1,13 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://scripts/Back_ground.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Main Menu/Background.png" type="Texture" id=2]
 
-[node name="Back_ground" type="Node"]
+[node name="Back_ground" type="Node2D"]
 script = ExtResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.988235, 0.976471, 0.976471, 1 )
-light_mask = 0
-position = Vector2( 639.485, 361.34 )
-texture = ExtResource( 2 )
