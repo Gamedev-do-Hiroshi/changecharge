@@ -1,6 +1,5 @@
 extends Node
  
-var time = Timer 
 
 var t = 0.0
 var letra = 0
@@ -31,13 +30,18 @@ func _physics_process(delta):
 		letra += 1
 		t = 0.0
 	$AnimationPlayer.play("twinkle")
-	if $TextureButton.is_pressed():
-		$AudioStreamPlayer2.play()
-		$AnimationPlayer.play("select")
+	
 
 func _on_TextureButton_pressed():
+	$AudioStreamPlayer2.play()
+	yield($AudioStreamPlayer2,"finished")
 	get_tree().change_scene("res://scenes/chooseLevel.tscn")
 
 
 func _on_TextureButton2_pressed():
 	get_tree().quit()
+
+
+
+		
+		
