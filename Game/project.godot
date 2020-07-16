@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Camera2D",
+"class": "MainCamera",
+"language": "GDScript",
+"path": "res://scenes/Cam2.gd"
+} ]
 _global_script_class_icons={
-
+"MainCamera": ""
 }
 
 [application]
