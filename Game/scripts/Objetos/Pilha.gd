@@ -14,7 +14,7 @@ func _ready():
 
 
 func _input(event):
-	if mouse_pilha%2 == 1 and event.is_pressed() and event.button_index == BUTTON_LEFT:
+	if event.button_index == BUTTON_LEFT and mouse_pilha%2 == 1 and event.is_pressed():
 		Carga = -Carga
 		$Sprite.texture = pilha_mais if Carga > 0 else pilha_menos
 
