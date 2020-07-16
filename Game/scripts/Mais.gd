@@ -13,8 +13,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
-			print("Fuck")
-			get_parent().get_node("Chapa1").lado-=1
+			get_parent().get_node("Chapa1").lado+=0
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
