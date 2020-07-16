@@ -66,12 +66,12 @@ __meta__ = {
 [node name="Back_ground" parent="." instance=ExtResource( 2 )]
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 354.95
-margin_top = 495.401
-margin_right = 441.95
-margin_bottom = 621.401
+margin_left = 352.0
+margin_top = 496.0
+margin_right = 439.0
+margin_bottom = 622.0
 rect_pivot_offset = Vector2( 43.5, 63 )
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 11 )
 expand = true
 stretch_mode = 6
@@ -80,12 +80,12 @@ __meta__ = {
 }
 
 [node name="TextureButton2" type="TextureButton" parent="."]
-margin_left = 879.501
-margin_top = 498.751
-margin_right = 966.501
-margin_bottom = 624.751
+margin_left = 880.0
+margin_top = 496.0
+margin_right = 967.0
+margin_bottom = 622.0
 rect_pivot_offset = Vector2( 43.5, 63 )
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 12 )
 expand = true
 stretch_mode = 6
@@ -242,10 +242,10 @@ __meta__ = {
 
 [node name="Letra10" type="RichTextLabel" parent="Titulo"]
 modulate = Color( 0.827451, 0.788235, 0.2, 1 )
-margin_left = 601.639
-margin_top = 440.823
-margin_right = 911.639
-margin_bottom = 495.823
+margin_left = 599.263
+margin_top = 442.999
+margin_right = 909.263
+margin_bottom = 497.999
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]R"
@@ -257,10 +257,10 @@ __meta__ = {
 
 [node name="Letra11" type="RichTextLabel" parent="Titulo"]
 modulate = Color( 0.827451, 0.788235, 0.2, 1 )
-margin_left = 642.536
-margin_top = 497.351
-margin_right = 952.539
-margin_bottom = 552.351
+margin_left = 639.263
+margin_top = 498.999
+margin_right = 949.266
+margin_bottom = 553.999
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]G"
