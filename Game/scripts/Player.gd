@@ -9,7 +9,7 @@ var ace = Vector2()
 var dace = Vector2()
 var ant_ace = Vector2()
 var ant_dace = Vector2()
-var dragging = false
+#var dragging = false
 
 var vel_pot = 0.0
 var K = 1000.0
@@ -23,16 +23,16 @@ var primeira_passada = true
 func _ready():
 	
 	primeira_passada = true
-	set_process_input(true)
+#	set_process_input(true)
 
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			dragging = true
-		else:
-			dragging = false
-	elif event is InputEventMouseMotion and dragging:
-		position = get_global_mouse_position()
+#func _input(event):
+#	if event is InputEventMouseButton:
+#		if event.is_pressed():
+#			dragging = true
+#		else:
+#			dragging = false
+#	elif event is InputEventMouseMotion and dragging:
+#		position = get_global_mouse_position()
 		
 func _physics_process(delta):
 	movimento(delta)
