@@ -8,15 +8,10 @@
 [ext_resource path="res://Sprites/Main Menu/lightning.png" type="Texture" id=6]
 [ext_resource path="res://music/Ludum Dare 38 - Track 2.wav" type="AudioStream" id=7]
 [ext_resource path="res://music/select.wav" type="AudioStream" id=8]
-<<<<<<< HEAD
-[ext_resource path="res://assets/positive.png" type="Texture" id=9]
-[ext_resource path="res://assets/negative.png" type="Texture" id=10]
-=======
 [ext_resource path="res://assets/negative.png" type="Texture" id=9]
 [ext_resource path="res://assets/positive.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Main Menu/play_button_on_hover.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Main Menu/exit_button_on_hover.png" type="Texture" id=12]
->>>>>>> a7c3378311f53e87a1514c06306f4f271bb91f8b
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -76,12 +71,8 @@ margin_top = 495.401
 margin_right = 441.95
 margin_bottom = 621.401
 rect_pivot_offset = Vector2( 43.5, 63 )
-<<<<<<< HEAD
-texture_normal = ExtResource( 3 )
-=======
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 11 )
->>>>>>> a7c3378311f53e87a1514c06306f4f271bb91f8b
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -94,12 +85,8 @@ margin_top = 498.751
 margin_right = 966.501
 margin_bottom = 624.751
 rect_pivot_offset = Vector2( 43.5, 63 )
-<<<<<<< HEAD
-texture_normal = ExtResource( 4 )
-=======
 texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 12 )
->>>>>>> a7c3378311f53e87a1514c06306f4f271bb91f8b
 expand = true
 stretch_mode = 6
 __meta__ = {
