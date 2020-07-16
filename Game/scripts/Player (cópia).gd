@@ -8,8 +8,11 @@ var vel = Vector2()
 var ace = Vector2()
 var dace = Vector2()
 var ant_ace = Vector2()
+<<<<<<< HEAD
 var ant_dace = Vector2()
+=======
 var dragging = false
+>>>>>>> ab1e1865c8c58363bb925133e946f6d78c80a1b8
 
 var vel_pot = 0.0
 var K = 1000.0
