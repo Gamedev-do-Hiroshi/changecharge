@@ -7,6 +7,7 @@ onready var pilha_mais = preload("res://assets/pilha_mais.png")
 onready var pilha_menos = preload("res://assets/pilha_menos.png")
 
 var mouse_pilha = 0
+var mouse_entrou = false
 
 func _ready():
 	$Sprite.texture = pilha_mais if Carga > 0 else pilha_menos
@@ -14,12 +15,13 @@ func _ready():
 
 
 func _input(event):
-	if event == InputEventMouseButton and mouse_pilha%2 == 1 and event.is_pressed():
+	if mouse_entrou and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		Carga = -Carga
 		$Sprite.texture = pilha_mais if Carga > 0 else pilha_menos
 
-
+	
 func _on_Pilha_mouse_entered():
+	mouse_entrou = true
 	mouse_pilha += 1
 	if mouse_pilha == 100:
 		#cria buraco negro
@@ -27,6 +29,7 @@ func _on_Pilha_mouse_entered():
 
 
 func _on_Pilha_mouse_exited():
+	mouse_entrou = false
 	mouse_pilha += 1
 	if mouse_pilha == 100:
 		#cria buraco negro
