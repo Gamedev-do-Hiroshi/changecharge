@@ -1,24 +1,24 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://scenes/Back_ground.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/font/ImPerfect23.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://Sprites/Main Menu/exit_button.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Main Menu/play_button.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Main Menu/lightning.png" type="Texture" id=5]
-[ext_resource path="res://scripts/Title_Screen.gd" type="Script" id=6]
+[ext_resource path="res://scripts/Title_Screen.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Back_ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Main Menu/play_button.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Main Menu/exit_button.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/font/ImPerfect23.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/Main Menu/lightning.png" type="Texture" id=6]
 [ext_resource path="res://music/Ludum Dare 38 - Track 2.wav" type="AudioStream" id=7]
 [ext_resource path="res://music/select.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/negative.png" type="Texture" id=9]
-[ext_resource path="res://assets/positive.png" type="Texture" id=10]
+[ext_resource path="res://assets/positive.png" type="Texture" id=9]
+[ext_resource path="res://assets/negative.png" type="Texture" id=10]
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=1]
 background_mode = 4
 tonemap_mode = 3
 ss_reflections_fade_in = 1.47737
 ss_reflections_fade_out = 0.217638
 glow_enabled = true
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "select"
 tracks/0/type = "value"
 tracks/0/path = NodePath("TextureButton:modulate")
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.2, 0.909804, 0.137255, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Titulo/Raio:modulate")
@@ -48,20 +48,20 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 50
-font_data = ExtResource( 2 )
+font_data = ExtResource( 5 )
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id=5]
 blend_mode = 1
 
 [node name="Title_Screen" type="Node"]
-script = ExtResource( 6 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 429.035 ]
 }
 
-[node name="Back_ground" parent="." instance=ExtResource( 1 )]
+[node name="Back_ground" parent="." instance=ExtResource( 2 )]
 
 [node name="TextureButton" type="TextureButton" parent="."]
 margin_left = 354.95
@@ -69,7 +69,7 @@ margin_top = 495.401
 margin_right = 441.95
 margin_bottom = 621.401
 rect_pivot_offset = Vector2( 43.5, 63 )
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -82,7 +82,7 @@ margin_top = 492.751
 margin_right = 966.501
 margin_bottom = 618.751
 rect_pivot_offset = Vector2( 43.5, 63 )
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -90,11 +90,11 @@ __meta__ = {
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/select = SubResource( 3 )
-anims/twinkle = SubResource( 4 )
+anims/select = SubResource( 2 )
+anims/twinkle = SubResource( 3 )
 
 [node name="Titulo" type="Node2D" parent="."]
 position = Vector2( 16.7371, 53.0006 )
@@ -106,7 +106,7 @@ margin_left = 530.702
 margin_top = 6.56481
 margin_right = 841.702
 margin_bottom = 61.5648
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE=10level=5]C"
 text = "C"
@@ -117,15 +117,11 @@ __meta__ = {
 
 [node name="Letra2" type="RichTextLabel" parent="Titulo"]
 modulate = Color( 0.827451, 0.788235, 0.2, 1 )
-anchor_left = -0.00160198
-anchor_top = -0.00854393
-anchor_right = -0.00160198
-anchor_bottom = -0.00854393
 margin_left = 575.841
 margin_top = 63.3476
 margin_right = 860.841
 margin_bottom = 118.347
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]H"
 text = "H"
@@ -140,7 +136,7 @@ margin_left = 604.325
 margin_top = 112.746
 margin_right = 916.325
 margin_bottom = 167.746
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]A"
 text = "A"
@@ -155,7 +151,7 @@ margin_left = 633.938
 margin_top = 167.746
 margin_right = 943.938
 margin_bottom = 222.746
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]N"
 text = "N"
@@ -170,7 +166,7 @@ margin_left = 677.771
 margin_top = 221.337
 margin_right = 987.775
 margin_bottom = 276.337
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]G"
 text = "G"
@@ -185,7 +181,7 @@ margin_left = 718.57
 margin_top = 274.037
 margin_right = 1028.58
 margin_bottom = 329.037
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]E"
 text = "E"
@@ -201,7 +197,7 @@ margin_left = 495.466
 margin_top = 282.579
 margin_right = 806.466
 margin_bottom = 337.579
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE=10level=5]C"
 text = "C"
@@ -212,15 +208,11 @@ __meta__ = {
 
 [node name="Letra8" type="RichTextLabel" parent="Titulo"]
 modulate = Color( 0.827451, 0.788235, 0.2, 1 )
-anchor_left = -0.00160198
-anchor_top = -0.00854393
-anchor_right = -0.00160198
-anchor_bottom = -0.00854393
 margin_left = 541.113
 margin_top = 338.125
 margin_right = 826.113
 margin_bottom = 393.125
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]H"
 text = "H"
@@ -235,7 +227,7 @@ margin_left = 569.089
 margin_top = 388.76
 margin_right = 881.089
 margin_bottom = 443.76
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]A"
 text = "A"
@@ -250,7 +242,7 @@ margin_left = 601.639
 margin_top = 440.823
 margin_right = 911.639
 margin_bottom = 495.823
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]R"
 text = "R"
@@ -265,7 +257,7 @@ margin_left = 642.536
 margin_top = 497.351
 margin_right = 952.539
 margin_bottom = 552.351
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]G"
 text = "G"
@@ -280,7 +272,7 @@ margin_left = 683.334
 margin_top = 550.051
 margin_right = 993.339
 margin_bottom = 605.051
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]E"
 text = "E"
@@ -290,10 +282,10 @@ __meta__ = {
 }
 
 [node name="Raio" type="Sprite" parent="Titulo"]
-material = SubResource( 1 )
+material = SubResource( 5 )
 position = Vector2( 630.132, 305.01 )
 scale = Vector2( 1.57812, 1.31534 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 1.65045, 0.170807 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -307,10 +299,10 @@ stream = ExtResource( 8 )
 [node name="Mais" type="Sprite" parent="."]
 modulate = Color( 0.784314, 0.392157, 0.392157, 1 )
 position = Vector2( 768.425, 681.269 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="Menos" type="Sprite" parent="."]
 position = Vector2( 537.049, 25.7352 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
