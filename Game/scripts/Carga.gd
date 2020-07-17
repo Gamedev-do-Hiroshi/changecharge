@@ -6,6 +6,10 @@ var sinal = true
 var mouse_entrou = false
 export var charge = 10
 
+func spark(dist,player):
+	if dist <= 100:
+		$Lighning.bolt(position,player)
+
 func _ready():
 	$Sprite.animation = "positive"
 	for no in raiz.get_children():
