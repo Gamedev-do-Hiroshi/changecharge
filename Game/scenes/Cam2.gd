@@ -16,3 +16,5 @@ func _unhandled_input(event: InputEvent):
 		get_tree().set_input_as_handled();
 		position += (_previousPosition - event.position);
 		_previousPosition = event.position;
+	elif event is InputEventKey and event.scancode == KEY_F and !self.is_current():
+		self.make_current()

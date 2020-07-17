@@ -1,14 +1,9 @@
-extends KinematicBody2D
-var dragging = false
+extends Camera2D
 
 func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			dragging = true
-		else:
-			dragging = false
-	elif event is InputEventMouseMotion and dragging:
-		self.position = get_global_mouse_position()
+	if event is InputEventKey and event.scancode == KEY_G and !self.is_current():
+		self.make_current()
+		
