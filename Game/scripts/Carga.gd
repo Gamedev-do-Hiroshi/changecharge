@@ -4,7 +4,7 @@ onready var raiz = self.get_parent()
 
 var sinal = true
 var mouse_entrou = false
-export var charge = 10
+export var Charge = 10
 
 func spark(dist,player):
 	if dist <= 100:
@@ -21,7 +21,7 @@ func _input(event):
 	
 	if event is InputEventMouseButton and mouse_entrou and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		sinal = !sinal
-		charge = -charge
+		Charge = -Charge
 		$Sprite.animation = "positive" if sinal else "negative"
 	
 func _on_Carga_mouse_entered():

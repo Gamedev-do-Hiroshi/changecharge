@@ -38,5 +38,5 @@ func _on_Pilha_mouse_exited():
 
 func _on_Pilha_body_entered(body):
 	if body.get_groups().has("player"):
-		body.charge += Carga
+		body.recebe_carga(Carga)
 		self.queue_free()
