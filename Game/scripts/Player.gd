@@ -20,7 +20,10 @@ var vel_pot = 0.0
 var K = 1000.0
 var campo_magnetico = 0.0
 var aux
-export var Charge = 0.0
+var acendeu = false
+var lampada
+var acesas = 0
+export var Charge = -10.0
 
 var primeira_passada = true
 var t = 0.0
@@ -38,6 +41,8 @@ func _ready():
 	$Cor.texture = VERMELHO if Charge > 0 else AZUL
 	$Aura.texture = V_AURA if Charge > 0 else A_AURA
 	$Aura.modulate = Color(1,1,1,min(abs(Charge)/MAX_CHARGE - 1,20))
+	acendeu = false
+	acesas = 0
 	t = 0.0
 #	set_process_input(true)
 
@@ -52,9 +57,9 @@ func _ready():
 		
 func _physics_process(delta):
 	t += delta
-	movimento(delta)
-	self.move_and_slide(vel)
-	recebe_carga(-5*delta)
+	if acendeu == false:
+		movimento(delta)
+		self.move_and_slide(vel)
 	$Aura.self_modulate = Color(1, 1, 1, 0.8*cos(5*t) + 0.2)
 	
 func movimento(delta):
@@ -89,3 +94,5 @@ func recebe_carga(valor):
 	$Cor.texture = VERMELHO if Charge > 0 else AZUL
 	$Aura.texture = V_AURA if Charge > 0 else A_AURA
 	$Aura.modulate = Color(1,1,1,min(abs(Charge)/MAX_CHARGE - 1,2))
+
+
