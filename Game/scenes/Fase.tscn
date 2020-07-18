@@ -25,7 +25,7 @@ B = 0.05
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 288.478, 359.692 )
-Charge = 30.0
+Charge = -50.0
 
 [node name="Pivot" type="Position2D" parent="Player"]
 position = Vector2( 3.1748, -3.1748 )
@@ -49,12 +49,19 @@ script = ExtResource( 11 )
 
 [node name="Carga1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 423.238, 570.388 )
+Comprimento = 200.0
+Angulo = 0.0
 
 [node name="Carga2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 802.694, 562.796 )
+Trilha = true
+Angulo = 90.0
 
 [node name="Carga3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 216.961, 301.642 )
+Trilha = true
+Comprimento = 75.0
+Angulo = 15.0
 
 [node name="Carga4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 844.163, 246.717 )
