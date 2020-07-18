@@ -29,6 +29,8 @@ func _on_Lampada_body_entered(body):
 		return
 	if body.get_groups().has("player"):
 		#$Sprite.animation = "acesa"
+		if body.Charge == 0:
+			return
 		acendeu = true
 		body.acendeu = true
 		body.lampada = self

@@ -14,6 +14,7 @@ var ace = Vector2()
 var dace = Vector2()
 var ant_ace = Vector2()
 var ant_dace = Vector2()
+var direcao = Vector2()
 #var dragging = false
 
 var vel_pot = 0.0
@@ -85,6 +86,11 @@ func movimento(delta):
 	
 	
 	vel += (ace + ant_ace ) * delta / 2 + vel * (dace - dace) * delta * delta / 12
+	
+	if vel != Vector2(0,0):
+		direcao = vel.normalized()
+	self.rotation = asin(direcao.y) if direcao.x > 0 else -asin(direcao.y)
+	$Sprite.flip_h = direcao.x > 0
 	
 	#self.position += vel * delta
 

@@ -93,5 +93,5 @@ editor_draw_drag_margin = true
 script = ExtResource( 9 )
 
 [node name="Lampada" parent="." instance=ExtResource( 12 )]
-position = Vector2( 365.978, 342.23 )
+position = Vector2( 386.605, 267.656 )
 scale = Vector2( 2, 2 )
