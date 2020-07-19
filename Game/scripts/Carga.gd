@@ -24,6 +24,7 @@ var segurando_mouse = false
 var aux
 
 var pos_trilha = Vector2()
+var defasagem = Vector2()
 
 func spark(dist,player):
 	if dist <= 100:
@@ -41,6 +42,7 @@ func _ready():
 	
 	segurando_mouse = false
 	posicao = self.position
+	defasagem = Vector2()
 
 func _input(event):
 	
@@ -52,13 +54,16 @@ func _input(event):
 	elif Trilha and event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if event.is_pressed():
 			if mouse_entrou:
+				get_tree().call_group("camera2", "defasagem")
+				print(event.global_position, " <-> ", self.position, "<=>", defasagem)
 				segurando_mouse = true
-				get_tree().call_group("camera", "mover_inativo")
+				get_tree().call_group("camera2", "mover_inativo")
 		else:
 			segurando_mouse = false
 		
 	elif Trilha and segurando_mouse and event is InputEventMouseMotion:
-		aux = (event.position - self.position).dot(pos_trilha.normalized())
+		get_tree().call_group("camera2", "defasagem")
+		aux = (event.position + defasagem - self.position).dot(pos_trilha.normalized())
 		aux = min(aux, Comprimento/2)
 		aux = max(aux, -Comprimento/2)
 		posicao = aux*pos_trilha.normalized()

@@ -101,4 +101,3 @@ func recebe_carga(valor):
 	$Aura.texture = V_AURA if Charge > 0 else A_AURA
 	$Aura.modulate = Color(1,1,1,min(abs(Charge)/MAX_CHARGE - 1,2))
 
-
