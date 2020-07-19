@@ -100,6 +100,7 @@ func movimento(delta):
 func recebe_carga(valor):
 	Charge += valor
 	$Cor.modulate = Color(1, 1, 1, min(1,abs(Charge)/MAX_CHARGE))
+	print(min(1,abs(Charge)/MAX_CHARGE))
 	$Cor.texture = VERMELHO if Charge > 0 else AZUL
 	$Aura.texture = V_AURA if Charge > 0 else A_AURA
 	$Aura.modulate = Color(1,1,1,min(abs(Charge)/MAX_CHARGE - 1,2))

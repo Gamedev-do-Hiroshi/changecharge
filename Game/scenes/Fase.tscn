@@ -23,32 +23,6 @@ centered = false
 position = Vector2( 693.116, 414.159 )
 B = 0.05
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 586.909, 410.489 )
-Charge = -50.0
-
-[node name="Pivot" type="Position2D" parent="Player"]
-position = Vector2( 3.1748, -3.1748 )
-script = ExtResource( 3 )
-
-[node name="CameraOffSet" type="Position2D" parent="Player/Pivot"]
-position = Vector2( 17.4089, 0.846868 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Camera2D" type="Camera2D" parent="Player/Pivot/CameraOffSet" groups=[
-"camera1",
-]]
-limit_left = -1000
-limit_top = 0
-limit_right = 1000
-limit_bottom = 720
-limit_smoothed = true
-smoothing_enabled = true
-editor_draw_drag_margin = true
-script = ExtResource( 11 )
-
 [node name="Carga1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 423.238, 570.388 )
 Comprimento = 200.0
@@ -76,6 +50,7 @@ position = Vector2( 933.637, 416.855 )
 
 [node name="Pilha" parent="." instance=ExtResource( 5 )]
 position = Vector2( 506.415, 472.179 )
+Carga = 50.0
 
 [node name="Buraco_Negro" parent="." instance=ExtResource( 8 )]
 position = Vector2( 583.919, 484.608 )
@@ -108,3 +83,29 @@ position = Vector2( 389.78, 250.195 )
 scale = Vector2( 2, 2 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 505.592, 377.006 )
+Charge = -50.0
+
+[node name="Pivot" type="Position2D" parent="Player"]
+position = Vector2( 3.1748, -3.1748 )
+script = ExtResource( 3 )
+
+[node name="CameraOffSet" type="Position2D" parent="Player/Pivot"]
+position = Vector2( 17.4089, 0.846868 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="Player/Pivot/CameraOffSet" groups=[
+"camera1",
+]]
+limit_left = -1000
+limit_top = 0
+limit_right = 1000
+limit_bottom = 720
+limit_smoothed = true
+smoothing_enabled = true
+editor_draw_drag_margin = true
+script = ExtResource( 11 )

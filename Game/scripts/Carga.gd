@@ -46,7 +46,7 @@ func _ready():
 
 func _input(event):
 	
-	if event is InputEventMouseButton and mouse_entrou and !event.is_pressed() and event.button_index == BUTTON_RIGHT:
+	if event is InputEventMouseButton and mouse_entrou and !event.is_pressed() and (event.button_index == BUTTON_RIGHT or (!Trilha and event.button_index == BUTTON_LEFT)):
 		sinal = !sinal
 		Charge = -Charge
 		$Sprite.animation = "positive" if sinal else "negative"
@@ -57,8 +57,15 @@ func _input(event):
 				get_tree().call_group("camera2", "defasagem")
 				segurando_mouse = true
 				get_tree().call_group("camera2", "mover_inativo")
+				contador = 0
+				ini_pos = event.position
 		else:
+			if segurando_mouse and (ini_pos - event.position).length() <= 1:
+				sinal = !sinal
+				Charge = -Charge
+				$Sprite.animation = "positive" if sinal else "negative"
 			segurando_mouse = false
+				
 		
 	elif Trilha and segurando_mouse and event is InputEventMouseMotion:
 		get_tree().call_group("camera2", "defasagem")
