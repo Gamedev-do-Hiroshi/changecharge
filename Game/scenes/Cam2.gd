@@ -18,3 +18,10 @@ func _unhandled_input(event: InputEvent):
 		_previousPosition = event.position;
 	elif event is InputEventKey and event.scancode == KEY_F and !self.is_current():
 		self.make_current()
+
+
+func mover_ativo():
+	_moveCamera = true
+	
+func mover_inativo():
+	_moveCamera = false

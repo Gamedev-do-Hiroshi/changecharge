@@ -53,6 +53,7 @@ func _input(event):
 		if event.is_pressed():
 			if mouse_entrou:
 				segurando_mouse = true
+				get_tree().call_group("camera", "mover_inativo")
 		else:
 			segurando_mouse = false
 		
