@@ -23,6 +23,9 @@ var phis2 = []
 var phis3 = []
 var tempo = 0.0
 
+var ini_limite = Vector2()
+var fim_limite = Vector2(1280, 720)
+
 func _ready():
 	
 	pontos = $Caminho.curve.get_baked_points()
@@ -70,11 +73,15 @@ func _draw():
 
 func _on_Buraco_Negro_body_entered(body):
 	if body.get_groups().has("player"):
-		var prob = randi()%1000
+		randomize()
+		var prob = randi()%1000/1000.0
+		print(prob)
 		if prob <= p_fase_aleatoria:
 			print("Player passará para uma fase aleatória")
 		elif prob <= p_fase_aleatoria + p_teleporte:
 			print("Player teleporta")
+			var lugar = ini_limite + randi()%5000/5000.0 * fim_limite
+			get_tree().set_group("player", "position", lugar)
 		else:
 			print("Player Morre")
 		pass

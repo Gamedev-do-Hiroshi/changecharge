@@ -78,7 +78,7 @@ position = Vector2( 933.637, 416.855 )
 position = Vector2( 506.415, 472.179 )
 
 [node name="Buraco_Negro" parent="." instance=ExtResource( 8 )]
-position = Vector2( 562.394, 295.667 )
+position = Vector2( 583.919, 484.608 )
 rotation = 0.0
 scale = Vector2( 0.15, 0.15 )
 Espessura = 10.0
@@ -106,3 +106,5 @@ script = ExtResource( 9 )
 [node name="Lampada" parent="." instance=ExtResource( 12 )]
 position = Vector2( 389.78, 250.195 )
 scale = Vector2( 2, 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]

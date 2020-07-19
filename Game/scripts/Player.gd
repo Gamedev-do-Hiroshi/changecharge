@@ -14,6 +14,7 @@ var ace = Vector2()
 var dace = Vector2()
 var ant_ace = Vector2()
 var ant_dace = Vector2()
+var ant_pos = Vector2()
 var direcao = Vector2()
 #var dragging = false
 
@@ -60,7 +61,9 @@ func _physics_process(delta):
 	t += delta
 	if acendeu == false:
 		movimento(delta)
+		ant_pos = self.position
 		self.move_and_slide(vel)
+		vel = (self.position - ant_pos)/delta
 	$Aura.self_modulate = Color(1, 1, 1, 0.8*cos(5*t) + 0.2)
 	
 func movimento(delta):

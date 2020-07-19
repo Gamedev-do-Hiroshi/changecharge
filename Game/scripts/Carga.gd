@@ -55,7 +55,6 @@ func _input(event):
 		if event.is_pressed():
 			if mouse_entrou:
 				get_tree().call_group("camera2", "defasagem")
-				print(event.global_position, " <-> ", self.position, "<=>", defasagem)
 				segurando_mouse = true
 				get_tree().call_group("camera2", "mover_inativo")
 		else:
