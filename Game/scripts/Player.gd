@@ -29,6 +29,9 @@ export var Charge = -10.0
 
 var primeira_passada = true
 var t = 0.0
+var tempo_magnetico = 0.0
+var num_col = 0
+var tempo_fora = 0.0 #criar algum nó pra cada fase pra definir os limites. Pode ser um caixa de colisao
 
 onready var VERMELHO = preload("res://assets/corpo_vermelho.png")
 onready var AZUL = preload("res://assets/corpo_azul.png")
@@ -46,6 +49,8 @@ func _ready():
 	acendeu = false
 	acesas = 0
 	t = 0.0
+	tempo_magnetico = 0.0
+	num_col = 0
 #	set_process_input(true)
 
 #func _input(event):
@@ -64,6 +69,7 @@ func _physics_process(delta):
 		ant_pos = self.position
 		self.move_and_slide(vel)
 		vel = (self.position - ant_pos)/delta
+		num_col += self.get_slide_count()
 	$Aura.self_modulate = Color(1, 1, 1, 0.8*cos(5*t) + 0.2)
 	
 func movimento(delta):
@@ -80,6 +86,7 @@ func movimento(delta):
 	
 	ace += Charge * campo_magnetico * vel.tangent()
 	dace += Charge * campo_magnetico * ace.tangent()
+	tempo_magnetico += abs(campo_magnetico) * delta
 	
 	
 	if primeira_passada:

@@ -6,9 +6,9 @@ const R = 236.0
 const R2 = 236.0
 const W = 2
 
-const p_morrer = 0.6
-const p_fase_aleatoria = 0.01
-const p_teleporte = 0.39
+var p_morrer = 0.6
+var p_fase_aleatoria = 0.01
+var p_teleporte = 0.39
 
 export var Espessura = 5.0
 
@@ -73,6 +73,9 @@ func _draw():
 
 func _on_Buraco_Negro_body_entered(body):
 	if body.get_groups().has("player"):
+		var aux = body.tempo_magnetico/10.0 + body.num_col/10.0 + body.tempo_fora/10.0
+		p_fase_aleatoria = 0.05 - 0.04/(aux+1)
+		p_teleporte = 0.5 - 0.11/(aux+1)
 		randomize()
 		var prob = randi()%1000/1000.0
 		print(prob)

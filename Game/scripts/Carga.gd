@@ -32,9 +32,8 @@ func spark(dist,player):
 
 func _ready():
 	$Sprite.animation = "positive"
-	for no in raiz.get_children():
-		if no.get_groups().has("player"):
-			no.cargas.push_back(self)
+	for no in get_tree().get_nodes_in_group("player"):
+		no.cargas.push_back(self)
 
 	if Trilha:
 		trilha()
