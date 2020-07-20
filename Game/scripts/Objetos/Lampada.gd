@@ -7,6 +7,8 @@ var objeto
 
 func _ready():
 	acendeu = false
+	$Filamento.animation = "apagada"
+	$Bulbo.animation = "apagada"
 
 func _process(delta):
 	
@@ -22,13 +24,14 @@ func _process(delta):
 			objeto.position = self.position + self.scale * Vector2(0,31).rotated(self.rotation)
 			objeto.scale = Vector2(1, 1)
 			objeto.acendeu = false
+			$Filamento.animation = "acesa"
+			$Bulbo.animation = "acesa"
 	
 
 func _on_Lampada_body_entered(body):
 	if acendeu:
 		return
 	if body.get_groups().has("player"):
-		#$Sprite.animation = "acesa"
 		if body.Charge == 0:
 			return
 		acendeu = true
