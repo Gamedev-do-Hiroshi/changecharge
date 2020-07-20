@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Objetos/Magnetico.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/Objetos/Ponta.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Objetos/Buraco_Negro.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Objetos/Fio.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/quadro_negro.png" type="Texture" id=10]
 [ext_resource path="res://scenes/Objetos/Lampada.tscn" type="PackedScene" id=12]
 
@@ -40,6 +41,9 @@ Angulo = 15.0
 [node name="Carga4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 844.163, 246.717 )
 
+[node name="Fio" parent="." instance=ExtResource( 9 )]
+position = Vector2( 164.522, 398.144 )
+
 [node name="Ponta" parent="." instance=ExtResource( 6 )]
 position = Vector2( 197.459, 398.386 )
 
@@ -65,5 +69,5 @@ scale = Vector2( 2, 2 )
 [node name="Polygon2D" type="Polygon2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 505.592, 377.006 )
+position = Vector2( 146.591, 360.006 )
 Charge = -50.0
