@@ -7,6 +7,18 @@ const MONITOR_V = 720
 var _previousPosition: Vector2 = Vector2(0, 0);
 var _moveCamera: bool = false;
 
+onready var objeto = $Pivot
+var pai_objeto
+
+func _ready():
+	for no in get_tree().get_nodes_in_group("player"):
+		pai_objeto = no
+	
+	self.remove_child(objeto)
+	pai_objeto.add_child(objeto)
+	objeto.set_owner(pai_objeto)
+	
+	
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT:
 		get_tree().set_input_as_handled();

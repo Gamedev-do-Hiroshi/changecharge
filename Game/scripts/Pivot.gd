@@ -1,8 +1,10 @@
 extends Position2D
 
-onready var parent = $'..'
+var parent
 
 func _ready():
+	for no in get_tree().get_nodes_in_group("player"):
+		parent = no
 	update_pivot_angle()
 	
 func _physics_process(delta):

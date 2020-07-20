@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/giz_branco.png" type="Texture" id=1]
+
+[node name="Giz" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 6.5625, -41.125, 4.4057, -43.6716, -4.11352, -43.5602, -6.56349, -41.1102, -6.41022, 41.0693, -4.23866, 43.5193, 3.83511, 43.742, 6.45213, 41.6818 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
