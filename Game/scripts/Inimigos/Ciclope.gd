@@ -28,8 +28,13 @@ func _ready():
 	for player in get_tree().get_nodes_in_group("player"):
 		if player.Charge == 0:
 			$Sorriso.texture = sorriso_reto
+			$Caixa/Colisao.disabled = false
 		elif sign(player.Charge) == sign(carga):
 			$Sorriso.flip_v = true
+			$Caixa/Colisao.disabled = false
+		else:
+			$Sorriso.flip_v = false
+			$Caixa/Colisao.disabled = true
 			
 
 func _process(delta):
@@ -37,11 +42,24 @@ func _process(delta):
 	for player in get_tree().get_nodes_in_group("player"):
 		if player.Charge == 0:
 			$Sorriso.texture = sorriso_reto
+			$Caixa/Colisao.disabled = false
 		else:
 			$Sorriso.texture = sorriso
 			$Sorriso.flip_v = (sign(player.Charge) == sign(carga))
+			$Caixa/Colisao.disabled = (sign(player.Charge) != sign(carga))
 			
-			
+		
 		$Olho.position = centro_olho + sign(player.Charge)*sign(self.carga)*((self.position - player.position).normalized())*raio_olho
 		#print(centro_olho + sign(player.Charge)*sign(self.carga)*((self.position - player.position).normalized()))
 	pass
+
+
+func _on_Ciclope_body_entered(body):
+	if body.get_groups().has("player") and (sign(body.Charge) != sign(carga)):
+		print("Ciclope: Player morre")
+
+
+
+
+
+

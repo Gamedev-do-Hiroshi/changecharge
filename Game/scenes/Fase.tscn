@@ -84,6 +84,7 @@ rotation = -0.649262
 
 [node name="Ciclope" parent="." instance=ExtResource( 13 )]
 position = Vector2( 370.349, 488.497 )
+carga = 10.0
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 146.591, 360.006 )
