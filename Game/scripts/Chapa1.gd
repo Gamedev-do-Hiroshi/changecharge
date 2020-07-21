@@ -18,12 +18,12 @@ func _process(delta):
 			x.real_position_y = x.must_be_position_y
 	elif(lado < 0):
 		for x in self.get_children():
-			x.real_position_x = -100
-			x.real_position_y = 360
+			x.real_position_x = -150
+			x.real_position_y = 296
 	else:
 		for x in self.get_children():
 			x.real_position_x = 1500
-			x.real_position_y = 360
+			x.real_position_y = 296
 	
 	if(change == 1):
 		

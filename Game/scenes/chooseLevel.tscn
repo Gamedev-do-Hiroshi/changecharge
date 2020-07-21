@@ -39,62 +39,47 @@ __meta__ = {
 script = ExtResource( 6 )
 
 [node name="ButtonFase" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 275.013, 235.725 )
 
 [node name="ButtonFase2" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 453.035, 236.953 )
 number = 2
 
 [node name="ButtonFase3" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 629.829, 234.498 )
 number = 3
 
 [node name="ButtonFase4" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 802.94, 234.498 )
 number = 4
 
 [node name="ButtonFase5" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 996.923, 232.042 )
 number = 5
 
 [node name="ButtonFase10" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 276.241, 579.492 )
 number = 11
 
 [node name="ButtonFase9" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 454.263, 581.947 )
 number = 12
 
 [node name="ButtonFase8" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 633.512, 577.037 )
 number = 13
 
 [node name="ButtonFase7" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 809.079, 574.581 )
 number = 14
 
 [node name="ButtonFase6" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 993.239, 575.809 )
 number = 15
 
 [node name="ButtonFase15" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 276.241, 408.837 )
 number = 6
 
 [node name="ButtonFase14" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 455.491, 407.609 )
 number = 7
 
 [node name="ButtonFase13" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 632.285, 405.153 )
 number = 8
 
 [node name="ButtonFase12" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 805.396, 403.925 )
 number = 9
 
 [node name="ButtonFase11" parent="Chapa1" instance=ExtResource( 2 )]
-position = Vector2( 995.695, 402.698 )
 number = 10
 
 [node name="Chapa2" type="Node2D" parent="."]
@@ -102,62 +87,47 @@ script = ExtResource( 6 )
 lado = 1
 
 [node name="ButtonFase" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 275.013, 235.725 )
 
 [node name="ButtonFase2" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 453.035, 236.953 )
 number = 2
 
 [node name="ButtonFase3" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 629.829, 234.498 )
 number = 3
 
 [node name="ButtonFase4" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 802.94, 234.498 )
 number = 4
 
 [node name="ButtonFase5" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 996.923, 232.042 )
 number = 5
 
 [node name="ButtonFase10" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 276.241, 579.492 )
 number = 11
 
 [node name="ButtonFase9" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 454.263, 581.947 )
 number = 12
 
 [node name="ButtonFase8" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 633.512, 577.037 )
 number = 13
 
 [node name="ButtonFase7" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 809.079, 574.581 )
 number = 14
 
 [node name="ButtonFase6" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 993.239, 575.809 )
 number = 15
 
 [node name="ButtonFase15" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 276.241, 408.837 )
 number = 6
 
 [node name="ButtonFase14" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 455.491, 407.609 )
 number = 7
 
 [node name="ButtonFase13" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 632.285, 405.153 )
 number = 8
 
 [node name="ButtonFase12" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 805.396, 403.925 )
 number = 9
 
 [node name="ButtonFase11" parent="Chapa2" instance=ExtResource( 2 )]
-position = Vector2( 995.695, 402.698 )
 number = 10
 
 [node name="Chapa3" type="Node2D" parent="."]
@@ -165,62 +135,47 @@ script = ExtResource( 6 )
 lado = 2
 
 [node name="ButtonFase" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 275.013, 235.725 )
 
 [node name="ButtonFase2" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 453.035, 236.953 )
 number = 2
 
 [node name="ButtonFase3" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 629.829, 234.498 )
 number = 3
 
 [node name="ButtonFase4" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 802.94, 234.498 )
 number = 4
 
 [node name="ButtonFase5" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 996.923, 232.042 )
 number = 5
 
 [node name="ButtonFase10" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 276.241, 579.492 )
 number = 11
 
 [node name="ButtonFase9" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 454.263, 581.947 )
 number = 12
 
 [node name="ButtonFase8" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 633.512, 577.037 )
 number = 13
 
 [node name="ButtonFase7" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 809.079, 574.581 )
 number = 14
 
 [node name="ButtonFase6" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 993.239, 575.809 )
 number = 15
 
 [node name="ButtonFase15" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 276.241, 408.837 )
 number = 6
 
 [node name="ButtonFase14" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 455.491, 407.609 )
 number = 7
 
 [node name="ButtonFase13" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 632.285, 405.153 )
 number = 8
 
 [node name="ButtonFase12" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 805.396, 403.925 )
 number = 9
 
 [node name="ButtonFase11" parent="Chapa3" instance=ExtResource( 2 )]
-position = Vector2( 995.695, 402.698 )
 number = 10
 
 [node name="Menos" type="TextureButton" parent="."]
