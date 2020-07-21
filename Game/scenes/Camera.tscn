@@ -7,7 +7,7 @@
 [node name="MainCamera" type="Camera2D" groups=[
 "camera2",
 ]]
-position = Vector2( 640, 360 )
+position = Vector2( 570.908, 360.353 )
 current = true
 limit_left = -1000
 limit_top = 0
@@ -29,7 +29,7 @@ position = Vector2( -131.233, 13.8312 )
 script = ExtResource( 3 )
 
 [node name="CameraOffSet" type="Position2D" parent="Pivot"]
-position = Vector2( 17.4089, 0.846868 )
+position = Vector2( 18.8231, 0.139746 )
 __meta__ = {
 "_edit_group_": true
 }

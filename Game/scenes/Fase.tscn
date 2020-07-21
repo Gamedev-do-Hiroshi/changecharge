@@ -10,7 +10,7 @@
 [ext_resource path="res://scenes/Objetos/Buraco_Negro.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Objetos/Fio.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/quadro_negro.png" type="Texture" id=10]
-[ext_resource path="res://scenes/Pausa.gd" type="Script" id=11]
+[ext_resource path="res://scenes/Pausa.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/Objetos/Lampada.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/Inimigos/Ciclope.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Lapis.tscn" type="PackedScene" id=14]
@@ -18,103 +18,74 @@
 
 [node name="Fase" type="Node2D"]
 
-[node name="BackGround" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="Background" type="Sprite" parent="BackGround"]
+[node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 10 )
 centered = false
 
-[node name="Mundo" type="CanvasLayer" parent="."]
-
-[node name="Campo" parent="Mundo" instance=ExtResource( 1 )]
+[node name="Campo" parent="." instance=ExtResource( 1 )]
 position = Vector2( 693.116, 414.159 )
 B = 0.05
 
-[node name="Carga1" parent="Mundo" instance=ExtResource( 4 )]
+[node name="Carga1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 423.238, 570.388 )
 Comprimento = 200.0
 Angulo = 0.0
 
-[node name="Carga2" parent="Mundo" instance=ExtResource( 4 )]
+[node name="Carga2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 802.694, 562.796 )
 Trilha = true
 Angulo = 90.0
 
-[node name="Carga3" parent="Mundo" instance=ExtResource( 4 )]
+[node name="Carga3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 216.961, 301.642 )
 Trilha = true
 Comprimento = 75.0
 Angulo = 15.0
 
-[node name="Carga4" parent="Mundo" instance=ExtResource( 4 )]
+[node name="Carga4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 844.163, 246.717 )
 
-[node name="Fio" parent="Mundo" instance=ExtResource( 9 )]
+[node name="Fio" parent="." instance=ExtResource( 9 )]
 position = Vector2( 164.522, 398.144 )
 
-[node name="Ponta" parent="Mundo" instance=ExtResource( 6 )]
+[node name="Ponta" parent="." instance=ExtResource( 6 )]
 position = Vector2( 197.459, 398.386 )
 
-[node name="Tomada" parent="Mundo" instance=ExtResource( 7 )]
+[node name="Tomada" parent="." instance=ExtResource( 7 )]
 position = Vector2( 933.637, 416.855 )
 
-[node name="Pilha" parent="Mundo" instance=ExtResource( 5 )]
+[node name="Pilha" parent="." instance=ExtResource( 5 )]
 position = Vector2( 506.415, 472.179 )
 Carga = 50.0
 
-[node name="Buraco_Negro" parent="Mundo" instance=ExtResource( 8 )]
+[node name="Buraco_Negro" parent="." instance=ExtResource( 8 )]
 position = Vector2( 583.919, 484.608 )
 rotation = 0.0
 scale = Vector2( 0.15, 0.15 )
 Espessura = 10.0
 
-[node name="MainCamera" parent="Mundo" instance=ExtResource( 3 )]
+[node name="MainCamera" parent="." instance=ExtResource( 3 )]
 
-[node name="Lampada" parent="Mundo" instance=ExtResource( 12 )]
+[node name="Lampada" parent="." instance=ExtResource( 12 )]
 position = Vector2( 389.78, 250.195 )
 scale = Vector2( 2, 2 )
 
-[node name="Polygon2D" type="Polygon2D" parent="Mundo"]
-
-[node name="Lapis" parent="Mundo" instance=ExtResource( 14 )]
+[node name="Lapis" parent="." instance=ExtResource( 14 )]
 position = Vector2( 696.203, 634.67 )
 rotation = 1.5708
 
-[node name="Giz" parent="Mundo" instance=ExtResource( 15 )]
+[node name="Polygon2D" type="Polygon2D" parent="."]
+
+[node name="Giz" parent="." instance=ExtResource( 15 )]
 position = Vector2( 207.155, 486.33 )
 rotation = -0.649262
 
-[node name="Ciclope" parent="Mundo" instance=ExtResource( 13 )]
+[node name="Ciclope" parent="." instance=ExtResource( 13 )]
 position = Vector2( 370.349, 488.497 )
 
-[node name="Player" parent="Mundo" instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 146.591, 360.006 )
 Charge = -50.0
 
-[node name="Pausa" type="CanvasLayer" parent="."]
-layer = 2
-
-[node name="Pausar" type="Control" parent="Pausa"]
+[node name="Pausa" parent="." instance=ExtResource( 11 )]
 pause_mode = 2
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="Pausa/Pausar"]
-pause_mode = 2
-anchor_left = -0.883
-anchor_top = 0.097
-anchor_right = 1.624
-anchor_bottom = 1.0
-margin_left = 1130.24
-margin_top = -69.84
-margin_right = -798.72
-color = Color( 0, 0, 0, 0.372549 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
