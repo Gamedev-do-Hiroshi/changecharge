@@ -16,7 +16,9 @@
 [ext_resource path="res://scenes/Lapis.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Giz.tscn" type="PackedScene" id=15]
 
-[node name="Fase" type="Node2D"]
+[node name="Fase" type="Node2D" groups=[
+"fase",
+]]
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 10 )
