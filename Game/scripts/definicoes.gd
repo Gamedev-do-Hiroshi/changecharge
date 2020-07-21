@@ -17,5 +17,4 @@ func _ready():
 	pausado = false
 
 func _process(delta):
-	if !pausado:
 		t += delta

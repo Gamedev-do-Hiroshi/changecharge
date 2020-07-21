@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quadro_negro.png-70e13691d3881863f4c16846b90f4f34.stex"
+path="res://.import/pauseBackGround.png-370410ea891258719cc44c17f281ed54.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/quadro_negro.png"
-dest_files=[ "res://.import/quadro_negro.png-70e13691d3881863f4c16846b90f4f34.stex" ]
+source_file="res://assets/pauseBackGround.png"
+dest_files=[ "res://.import/pauseBackGround.png-370410ea891258719cc44c17f281ed54.stex" ]
 
 [params]
 
