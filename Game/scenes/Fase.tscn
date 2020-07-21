@@ -9,12 +9,12 @@
 [ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Objetos/Buraco_Negro.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Objetos/Fio.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/quadro_negro.png" type="Texture" id=10]
+[ext_resource path="res://assets/Backgrounds/quadro_negro.png" type="Texture" id=10]
 [ext_resource path="res://scenes/Pausa.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/Objetos/Lampada.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/Inimigos/Ciclope.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/Lapis.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/Giz.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/Obstaculos/Lapis.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Obstaculos/Giz.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/definicoes.tscn" type="PackedScene" id=16]
 
 [node name="Fase" type="Node2D" groups=[
@@ -76,15 +76,11 @@ Espessura = 10.0
 position = Vector2( 389.78, 250.195 )
 scale = Vector2( 2, 2 )
 
+[node name="Giz" parent="." instance=ExtResource( 15 )]
+
 [node name="Lapis" parent="." instance=ExtResource( 14 )]
-position = Vector2( 696.203, 634.67 )
-rotation = 1.5708
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-
-[node name="Giz" parent="." instance=ExtResource( 15 )]
-position = Vector2( 207.155, 486.33 )
-rotation = -0.649262
 
 [node name="Ciclope" parent="." instance=ExtResource( 13 )]
 position = Vector2( 370.349, 488.497 )
