@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Objetos/Magnetico.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -15,10 +15,14 @@
 [ext_resource path="res://scenes/Inimigos/Ciclope.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Lapis.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Giz.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/definicoes.tscn" type="PackedScene" id=16]
 
 [node name="Fase" type="Node2D" groups=[
 "fase",
 ]]
+
+[node name="Definicoes" parent="." instance=ExtResource( 16 )]
+limite_dir = 2000
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 10 )

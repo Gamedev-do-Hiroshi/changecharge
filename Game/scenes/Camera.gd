@@ -5,6 +5,14 @@ const MONITOR_V = 720
 
 
 func _ready():
+	
+	for no in get_tree().get_nodes_in_group("definicoes"):
+		self.limit_left = no.limite_esq
+		self.limit_right = no.limite_dir
+		self.limit_top = no.limite_cima 
+		self.limit_bottom = no.limite_baixo
+		
+		
 	set_process_input(true)
 	
 	
