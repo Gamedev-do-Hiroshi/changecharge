@@ -21,7 +21,9 @@ func _ready():
 	
 	for no in get_tree().get_nodes_in_group("player"):
 		pai_objeto = no
-	
+		
+	print(objeto)
+	print(pai_objeto)
 	self.remove_child(objeto)
 	pai_objeto.add_child(objeto)
 	objeto.set_owner(pai_objeto)

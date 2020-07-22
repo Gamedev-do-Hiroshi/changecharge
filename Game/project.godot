@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Camera2D",
 "class": "MainCamera",
 "language": "GDScript",
-"path": "res://scenes/Cam2.gd"
+"path": "res://scripts/Cam2.gd"
 } ]
 _global_script_class_icons={
 "MainCamera": ""

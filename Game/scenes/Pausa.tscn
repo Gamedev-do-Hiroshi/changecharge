@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/Pausa.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Pausa.gd" type="Script" id=1]
 [ext_resource path="res://assets/stop.png" type="Texture" id=2]
-[ext_resource path="res://scenes/TextureButton.gd" type="Script" id=3]
+[ext_resource path="res://scripts/TextureButton.gd" type="Script" id=3]
 
 [node name="Pausa" type="CanvasLayer"]
 layer = 2
