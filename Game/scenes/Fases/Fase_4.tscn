@@ -1,0 +1,256 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/Backgrounds/quadro_negro.png" type="Texture" id=1]
+[ext_resource path="res://scenes/definicoes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Objetos/Ponta.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Obstaculos/Giz.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/Fases/Fase_4.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Objetos/Cerca_Eletrica.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Objetos/Pilha.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Carga.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Objetos/Lampada.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Obstaculos/Lapis.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Objetos/Fio.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Camera.tscn" type="PackedScene" id=14]
+
+[node name="Fase_4" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Definicoes" parent="." instance=ExtResource( 2 )]
+fase = 4
+limite_dir = 2560
+
+[node name="quadro_negro" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 640, 360 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="quadro_negro2" type="Sprite" parent="."]
+position = Vector2( 1280, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 640, 360 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculos" type="Node2D" parent="."]
+
+[node name="Giz2" parent="Obstaculos" instance=ExtResource( 4 )]
+position = Vector2( 254.904, 723.559 )
+rotation = -0.743601
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Giz5" parent="Obstaculos" instance=ExtResource( 4 )]
+modulate = Color( 0.992157, 1, 0.227451, 1 )
+position = Vector2( 576.407, 935.86 )
+rotation = 1.56086
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Giz3" parent="Obstaculos" instance=ExtResource( 4 )]
+modulate = Color( 0.976471, 0.27451, 1, 1 )
+position = Vector2( 299.304, 904.154 )
+rotation = 1.54383
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Lapis" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 270, 200 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Lapis2" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 270, 560 )
+rotation = 3.14159
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Cerca_Eletrica9" parent="Obstaculos" instance=ExtResource( 7 )]
+position = Vector2( 980.563, 232.726 )
+rotation = -0.972298
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica10" parent="Obstaculos" instance=ExtResource( 7 )]
+position = Vector2( 1145.2, 346.207 )
+rotation = -0.972298
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica12" parent="Obstaculos" instance=ExtResource( 7 )]
+position = Vector2( 1875.16, 405.347 )
+rotation = -0.972298
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica11" parent="Obstaculos" instance=ExtResource( 7 )]
+position = Vector2( 2039.79, 518.827 )
+rotation = -0.972298
+scale = Vector2( 0.6, 1 )
+
+[node name="Parede1" type="Node2D" parent="Obstaculos"]
+position = Vector2( 0, 100 )
+
+[node name="Cerca_Eletrica11" parent="Obstaculos/Parede1" instance=ExtResource( 7 )]
+position = Vector2( 1819.66, 480 )
+rotation = 1.5708
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica10" parent="Obstaculos/Parede1/Cerca_Eletrica11" instance=ExtResource( 7 )]
+position = Vector2( 1.72852, -199.255 )
+rotation = 3.14159
+
+[node name="Carga4" parent="Obstaculos/Parede1/Cerca_Eletrica11" instance=ExtResource( 9 )]
+position = Vector2( 2.4491, -305.373 )
+rotation = -1.57297
+scale = Vector2( 1, 1.66667 )
+
+[node name="Cerca_Eletrica10" parent="Obstaculos/Parede1" instance=ExtResource( 7 )]
+position = Vector2( 1411.88, 480 )
+rotation = 1.5708
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica9" parent="Obstaculos/Parede1/Cerca_Eletrica10" instance=ExtResource( 7 )]
+position = Vector2( 1.72852, -199.255 )
+rotation = 3.14159
+
+[node name="Carga4" parent="Obstaculos/Parede1/Cerca_Eletrica10" instance=ExtResource( 9 )]
+position = Vector2( 2.4491, -305.373 )
+rotation = -1.57297
+scale = Vector2( 1, 1.66667 )
+
+[node name="Cerca_Eletrica9" parent="Obstaculos/Parede1" instance=ExtResource( 7 )]
+position = Vector2( 1007.28, 480 )
+rotation = 1.5708
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica9" parent="Obstaculos/Parede1/Cerca_Eletrica9" instance=ExtResource( 7 )]
+position = Vector2( 1.72852, -199.255 )
+rotation = 3.14159
+
+[node name="Carga4" parent="Obstaculos/Parede1/Cerca_Eletrica9" instance=ExtResource( 9 )]
+position = Vector2( 2.4491, -305.373 )
+rotation = -1.57297
+scale = Vector2( 1, 1.66667 )
+
+[node name="Cerca_Eletrica8" parent="Obstaculos/Parede1" instance=ExtResource( 7 )]
+position = Vector2( 602.676, 480 )
+rotation = 1.5708
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica9" parent="Obstaculos/Parede1/Cerca_Eletrica8" instance=ExtResource( 7 )]
+position = Vector2( 1.72852, -199.255 )
+rotation = 3.14159
+
+[node name="Carga4" parent="Obstaculos/Parede1/Cerca_Eletrica8" instance=ExtResource( 9 )]
+position = Vector2( 2.4491, -305.373 )
+rotation = -1.57297
+scale = Vector2( 1, 1.66667 )
+
+[node name="Carga" parent="Obstaculos/Parede1" instance=ExtResource( 9 )]
+position = Vector2( 487.341, 480 )
+rotation = -0.00130579
+
+[node name="Parede2" type="Node2D" parent="Obstaculos"]
+position = Vector2( 0, -100 )
+
+[node name="Cerca_Eletrica11" parent="Obstaculos/Parede2" instance=ExtResource( 7 )]
+position = Vector2( 1819.66, 280 )
+rotation = 1.5708
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica9" parent="Obstaculos/Parede2/Cerca_Eletrica11" instance=ExtResource( 7 )]
+position = Vector2( 1.72852, -199.255 )
+rotation = 3.14159
+
+[node name="Carga4" parent="Obstaculos/Parede2/Cerca_Eletrica11" instance=ExtResource( 9 )]
+position = Vector2( 2.4491, -305.373 )
+rotation = -1.57297
+scale = Vector2( 1, 1.66667 )
+
+[node name="Cerca_Eletrica10" parent="Obstaculos/Parede2" instance=ExtResource( 7 )]
+position = Vector2( 1411.88, 280 )
+rotation = 1.5708
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica9" parent="Obstaculos/Parede2/Cerca_Eletrica10" instance=ExtResource( 7 )]
+position = Vector2( 1.72852, -199.255 )
+rotation = 3.14159
+
+[node name="Carga4" parent="Obstaculos/Parede2/Cerca_Eletrica10" instance=ExtResource( 9 )]
+position = Vector2( 2.4491, -305.373 )
+rotation = -1.57297
+scale = Vector2( 1, 1.66667 )
+
+[node name="Cerca_Eletrica9" parent="Obstaculos/Parede2" instance=ExtResource( 7 )]
+position = Vector2( 1007.28, 280 )
+rotation = 1.5708
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica9" parent="Obstaculos/Parede2/Cerca_Eletrica9" instance=ExtResource( 7 )]
+position = Vector2( 1.72852, -199.255 )
+rotation = 3.14159
+
+[node name="Carga4" parent="Obstaculos/Parede2/Cerca_Eletrica9" instance=ExtResource( 9 )]
+position = Vector2( 2.4491, -305.373 )
+rotation = -1.57297
+scale = Vector2( 1, 1.66667 )
+
+[node name="Cerca_Eletrica8" parent="Obstaculos/Parede2" instance=ExtResource( 7 )]
+position = Vector2( 602.676, 280 )
+rotation = 1.5708
+scale = Vector2( 0.6, 1 )
+
+[node name="Cerca_Eletrica9" parent="Obstaculos/Parede2/Cerca_Eletrica8" instance=ExtResource( 7 )]
+position = Vector2( 1.72852, -199.255 )
+rotation = 3.14159
+
+[node name="Carga4" parent="Obstaculos/Parede2/Cerca_Eletrica8" instance=ExtResource( 9 )]
+position = Vector2( 2.4491, -305.373 )
+rotation = -1.57297
+scale = Vector2( 1, 1.66667 )
+
+[node name="Carga" parent="Obstaculos/Parede2" instance=ExtResource( 9 )]
+position = Vector2( 487.341, 280 )
+rotation = -0.00130579
+
+[node name="Cargas" type="Node2D" parent="."]
+rotation = -0.00130579
+
+[node name="Lampada" parent="Cargas" instance=ExtResource( 10 )]
+position = Vector2( 1286.34, 679.965 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Pilha" parent="Cargas" instance=ExtResource( 8 )]
+position = Vector2( 450, 380 )
+Carga = 50.0
+
+[node name="Pilha2" parent="Cargas" instance=ExtResource( 8 )]
+position = Vector2( 1169.01, 680.445 )
+Carga = 50.0
+
+[node name="Pilha3" parent="Cargas" instance=ExtResource( 8 )]
+position = Vector2( 296.924, 676.37 )
+Carga = 50.0
+
+[node name="Fios" type="Node2D" parent="."]
+
+[node name="Tomada" parent="Fios" instance=ExtResource( 12 )]
+position = Vector2( 2418.06, 331.846 )
+rotation = -0.00130579
+
+[node name="Fio2" parent="Fios/Tomada" instance=ExtResource( 13 )]
+position = Vector2( 22.7009, -0.673401 )
+rotation = -3.14029
+
+[node name="Ponta" parent="Fios" instance=ExtResource( 3 )]
+position = Vector2( 145.928, 376.312 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fio" parent="Fios/Ponta" instance=ExtResource( 13 )]
+position = Vector2( -35.8753, 1.62201 )
+scale = Vector2( 0.666667, 0.666667 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 280, 380 )
+Charge = 0.0
+
+[node name="MainCamera" parent="." instance=ExtResource( 14 )]
