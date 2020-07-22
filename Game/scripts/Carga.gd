@@ -31,7 +31,7 @@ func spark(dist,player):
 		$Lighning.bolt(position,player)
 
 func _ready():
-	$Sprite.animation = "positive"
+	$Sprite.animation = "positive" if Charge > 0 else "negative"
 	for no in get_tree().get_nodes_in_group("player"):
 		no.cargas.push_back(self)
 
@@ -46,9 +46,8 @@ func _ready():
 func _input(event):
 	
 	if event is InputEventMouseButton and mouse_entrou and !event.is_pressed() and (event.button_index == BUTTON_RIGHT or (!Trilha and event.button_index == BUTTON_LEFT)):
-		sinal = !sinal
 		Charge = -Charge
-		$Sprite.animation = "positive" if sinal else "negative"
+		$Sprite.animation = "positive" if Charge > 0 else "negative"
 			
 	elif Trilha and event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if event.is_pressed():
@@ -60,9 +59,8 @@ func _input(event):
 				ini_pos = event.position
 		else:
 			if segurando_mouse and (ini_pos - event.position).length() <= 1:
-				sinal = !sinal
 				Charge = -Charge
-				$Sprite.animation = "positive" if sinal else "negative"
+				$Sprite.animation = "positive" if Charge > 0 else "negative"
 			segurando_mouse = false
 				
 		

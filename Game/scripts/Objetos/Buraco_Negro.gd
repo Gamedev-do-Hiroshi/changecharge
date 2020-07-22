@@ -46,7 +46,10 @@ func _ready():
 	#print(pontos)
 	
 	tempo = 0.0
-	print(pontos.size())
+	
+	for no in get_tree().get_nodes_in_group("descricoes"):
+		ini_limite = Vector2(no.limite_esq, no.limite_dir)
+		fim_limite = Vector2(no.limite_cima, no.limite_baixo)
 	
 func _process(delta):
 	tempo += delta
