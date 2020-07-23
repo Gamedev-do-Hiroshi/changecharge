@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/Backgrounds/quadro_negro.png" type="Texture" id=1]
 [ext_resource path="res://scenes/definicoes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Objetos/Ponta.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Obstaculos/Giz.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/Fases/Fase_4.gd" type="Script" id=5]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Objetos/Cerca_Eletrica.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Objetos/Pilha.tscn" type="PackedScene" id=8]
@@ -12,11 +11,10 @@
 [ext_resource path="res://scenes/Objetos/Lampada.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Obstaculos/Lapis.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/Objetos/Fio.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Camera.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Pausa.tscn" type="PackedScene" id=15]
 
-[node name="Fase_4" type="Node2D"]
-script = ExtResource( 5 )
+[node name="Fase_5" type="Node2D"]
 
 [node name="Definicoes" parent="." instance=ExtResource( 2 )]
 fase = 4
@@ -237,21 +235,15 @@ Carga = 50.0
 position = Vector2( 2418.06, 331.846 )
 rotation = -0.00130579
 
-[node name="Fio2" parent="Fios/Tomada" instance=ExtResource( 13 )]
-position = Vector2( 22.7009, -0.673401 )
-rotation = -3.14029
-
 [node name="Ponta" parent="Fios" instance=ExtResource( 3 )]
-position = Vector2( 145.928, 376.312 )
+position = Vector2( 117.496, 614.106 )
+rotation = -1.5708
 scale = Vector2( 1.5, 1.5 )
-
-[node name="Fio" parent="Fios/Ponta" instance=ExtResource( 13 )]
-position = Vector2( -35.8753, 1.62201 )
-scale = Vector2( 0.666667, 0.666667 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2341.49, 328.606 )
 Charge = 100.0
 
 [node name="MainCamera" parent="." instance=ExtResource( 14 )]
-offset = Vector2( 1280, 0 )
+
+[node name="Pausa" parent="." instance=ExtResource( 15 )]

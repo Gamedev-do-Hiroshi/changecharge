@@ -10,6 +10,7 @@ var novamente = preload("res://Sprites/Main Menu/restart_button.png")
 var novamente_focus = preload("res://Sprites/Main Menu/restart_button_focus.png")
 
 func _ready():
+	cria("pausa")
 	pass
 
 func cria(argumento):
@@ -24,7 +25,6 @@ func cria(argumento):
 		$TextureButton.texture_normal = novamente
 		$TextureButton.texture_hover = novamente_focus
 		print("Se liga: ", $TextureButton.texture_focused)
-		update()
 	else:
 		$TextureButton.texture_normal = continua
 		$TextureButton.texture_hover = continua_focus
@@ -40,7 +40,13 @@ func _on_TextureButton_pressed():
 	print("tipo: ", tipo)
 	if tipo != "passou":
 		print("!= passou")
-		get_tree().change_scene("res://scenes/" + get_tree().get_current_scene().get_name()+".tscn")
+		print(tipo)
+		print(get_tree().get_current_scene().get_name())
+		var prox_fase
+		for no in get_tree().get_nodes_in_group("definicoes"):
+			prox_fase = no.fase
+			get_tree().change_scene("res://scenes/Fases/Fase_" + String(prox_fase)+".tscn")
+		cria("pausa")
 	else:
 		print("== passou")
 		var prox_fase
@@ -51,6 +57,7 @@ func _on_TextureButton_pressed():
 			if file.file_exists("res://scenes/Fases/Fase_" + String(prox_fase) +".tscn"):
 				print("EXISTE")
 				get_tree().change_scene("res://scenes/Fases/Fase_" + String(prox_fase) +".tscn")
+				cria("pausa")
 			else:
 				print("NAO EXISTE")
 	
