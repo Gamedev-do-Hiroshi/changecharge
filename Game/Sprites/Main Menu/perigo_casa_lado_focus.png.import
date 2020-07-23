@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/play_button_menu_copia.png-3979f53b6b636d283a14917946aa2550.stex"
+path="res://.import/perigo_casa_lado_focus.png-62b2ab77f9c7f5ee8b5d70725242c93e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Main Menu/play_button_menu_copia.png"
-dest_files=[ "res://.import/play_button_menu_copia.png-3979f53b6b636d283a14917946aa2550.stex" ]
+source_file="res://Sprites/Main Menu/perigo_casa_lado_focus.png"
+dest_files=[ "res://.import/perigo_casa_lado_focus.png-62b2ab77f9c7f5ee8b5d70725242c93e.stex" ]
 
 [params]
 

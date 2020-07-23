@@ -1,18 +1,16 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/font/ImPerfect23.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://Sprites/Main Menu/continue_focus.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Main Menu/continue.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Main Menu/perigo_casa_lado.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Main Menu/perigo_casa_lado_focus.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Main Menu/background_menu.png" type="Texture" id=4]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=5]
 [ext_resource path="res://Sprites/Main Menu/play_button_menu.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Main Menu/play_button_menu_focus.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=1]
-size = 70
-font_data = ExtResource( 1 )
+[sub_resource type="CanvasItemMaterial" id=2]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 40
 font_data = ExtResource( 1 )
 
@@ -24,14 +22,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 562.0
-margin_top = 160.0
-margin_right = 838.0
-margin_bottom = 248.0
-custom_fonts/font = SubResource( 1 )
-text = "Menu"
-align = 1
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+material = SubResource( 2 )
+margin_left = 595.72
+margin_top = 168.009
+margin_right = 885.72
+margin_bottom = 238.009
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0.968627, 1, 0, 1 )
+text = "PAUSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+visible = false
+material = SubResource( 2 )
+margin_left = 558.853
+margin_top = 158.578
+margin_right = 848.853
+margin_bottom = 258.578
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0.968627, 1, 0, 1 )
+text = "  LEVEL
+CLEARED"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+visible = false
+material = SubResource( 2 )
+margin_left = 551.994
+margin_top = 171.439
+margin_right = 841.994
+margin_bottom = 271.439
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0.968627, 1, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]TRY
+AGAIN [/center]"
+text = "TRY
+AGAIN "
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -52,26 +84,15 @@ __meta__ = {
 }
 
 [node name="TextureButton2" type="TextureButton" parent="."]
-margin_left = 544.0
-margin_top = 453.0
-margin_right = 840.0
-margin_bottom = 493.0
-texture_normal = ExtResource( 3 )
-texture_hover = ExtResource( 2 )
+margin_left = 664.0
+margin_top = 420.0
+margin_right = 744.0
+margin_bottom = 508.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Exit" type="Label" parent="TextureButton2"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -58.0
-margin_top = 1.0
-margin_right = 78.0
-margin_bottom = 44.0
-custom_fonts/font = SubResource( 2 )
-text = "Exit"
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }

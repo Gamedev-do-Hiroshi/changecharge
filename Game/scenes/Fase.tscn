@@ -57,7 +57,7 @@ position = Vector2( 844.163, 246.717 )
 position = Vector2( 197.459, 398.386 )
 
 [node name="Tomada" parent="." instance=ExtResource( 7 )]
-position = Vector2( 933.637, 416.855 )
+position = Vector2( 1118.7, 405.167 )
 
 [node name="Pilha" parent="." instance=ExtResource( 5 )]
 position = Vector2( 506.415, 472.179 )
@@ -86,7 +86,7 @@ position = Vector2( 370.349, 488.497 )
 carga = 10.0
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 189.653, 357.955 )
+position = Vector2( 319.505, 392.406 )
 Charge = -50.0
 
 [node name="Pausa" parent="." instance=ExtResource( 11 )]

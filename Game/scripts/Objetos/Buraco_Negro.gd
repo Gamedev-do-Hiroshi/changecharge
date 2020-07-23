@@ -90,4 +90,5 @@ func _on_Buraco_Negro_body_entered(body):
 			get_tree().set_group("player", "position", lugar)
 		else:
 			print("Player Morre")
+			body.morre()
 		pass

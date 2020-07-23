@@ -2,19 +2,22 @@ extends Control
 
 
 var menu = preload("res://scenes/Menu.tscn")
-var child = menu.instance()
-
+var child
 
 func _ready():
 	visible = false
+	child = menu.instance()
+	child.cria("pausa")
 	add_child(child)
 	
 func _input(event):
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("pause") and child.tipo == "pausa":
+		child.cria("pausa")
 		pause()
 	
 func _on_TextureButton_pressed():
-	pause()
+	if child.tipo == "pausa":
+		pause()
 	pass
 	
 func pause():
@@ -25,4 +28,20 @@ func pause():
 		get_tree().call_group("stop","volta")
 	else:
 		get_tree().call_group("stop","para")
+
+func passou():
+	child.cria("passou")
+	visible = true
+	pause()
+	#$TextureButton.visible = false
+	#$TextureButton.queue_free()
+	pass
+
+func perdeu():
+	child.cria("perdeu")
+	visible = true
+	pause()
+	#$TextureButton.visible = false
+	#$TextureButton.queue_free()
+	pass
 	

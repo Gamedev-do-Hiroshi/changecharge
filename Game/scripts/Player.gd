@@ -38,6 +38,7 @@ onready var AZUL = preload("res://assets/corpo_azul.png")
 onready var V_AURA = preload("res://assets/aura_vermelha.png")
 onready var A_AURA = preload("res://assets/aura_azul.png")
 
+var menu = preload("res://scenes/Menu.tscn")
 
 func _ready():
 	
@@ -113,3 +114,7 @@ func recebe_carga(valor):
 	$Aura.texture = V_AURA if Charge > 0 else A_AURA
 	$Aura.modulate = Color(1,1,1,min(abs(Charge)/MAX_CHARGE - 1,2))
 
+func morre():
+	
+	for no in get_tree().get_nodes_in_group("gui"):
+		no.perdeu()

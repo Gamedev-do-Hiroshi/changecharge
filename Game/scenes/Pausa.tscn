@@ -7,10 +7,14 @@
 [node name="Pausa" type="CanvasLayer"]
 layer = 2
 
-[node name="GUI" type="Control" parent="."]
+[node name="GUI" type="Control" parent="." groups=[
+"gui",
+]]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -2.51758
+margin_right = -2.51758
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

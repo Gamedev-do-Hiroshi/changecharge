@@ -49,7 +49,7 @@ func _process(delta):
 			$Caixa/Colisao.disabled = (sign(player.Charge) != sign(carga))
 			
 		
-		$Olho.position = centro_olho + sign(player.Charge)*sign(self.carga)*((self.position - player.position).normalized())*raio_olho
+		$Olho.position = centro_olho + sign(player.Charge)*sign(self.carga)*((self.position - player.global_position).normalized())*raio_olho
 		#print(centro_olho + sign(player.Charge)*sign(self.carga)*((self.position - player.position).normalized()))
 	pass
 
@@ -57,6 +57,7 @@ func _process(delta):
 func _on_Ciclope_body_entered(body):
 	if body.get_groups().has("player") and (sign(body.Charge) != sign(carga)):
 		print("Ciclope: Player morre")
+		body.morre()
 
 
 
