@@ -8,9 +8,9 @@
 [ext_resource path="res://Sprites/Main Menu/play_button_menu.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Main Menu/play_button_menu_focus.png" type="Texture" id=7]
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=1]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = ExtResource( 1 )
 
@@ -22,13 +22,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+modulate = Color( 0.768627, 0.768627, 0.796078, 1 )
+margin_left = 528.0
+margin_top = 120.0
+margin_right = 856.0
+margin_bottom = 584.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-material = SubResource( 2 )
+material = SubResource( 1 )
 margin_left = 595.72
 margin_top = 168.009
 margin_right = 885.72
 margin_bottom = 238.009
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.968627, 1, 0, 1 )
 text = "PAUSE"
 __meta__ = {
@@ -37,12 +48,12 @@ __meta__ = {
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 visible = false
-material = SubResource( 2 )
+material = SubResource( 1 )
 margin_left = 558.853
 margin_top = 158.578
 margin_right = 848.853
 margin_bottom = 258.578
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.968627, 1, 0, 1 )
 text = "  LEVEL
 CLEARED"
@@ -52,12 +63,12 @@ __meta__ = {
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 visible = false
-material = SubResource( 2 )
+material = SubResource( 1 )
 margin_left = 551.994
 margin_top = 171.439
 margin_right = 841.994
 margin_bottom = 271.439
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.968627, 1, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]TRY
@@ -93,17 +104,6 @@ texture_normal = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
 expand = true
 stretch_mode = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-modulate = Color( 0.768627, 0.768627, 0.796078, 0.552941 )
-margin_left = 528.0
-margin_top = 120.0
-margin_right = 856.0
-margin_bottom = 584.0
-texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
