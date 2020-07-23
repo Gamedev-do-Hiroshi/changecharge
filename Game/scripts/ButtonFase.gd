@@ -57,3 +57,9 @@ func _process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_ButtonFase_button_up():
+	var nome = "res://scenes/Fases/Fase_" + str(number) + ".tscn"
+	get_tree().change_scene(nome)
+	pass # Replace with function body.

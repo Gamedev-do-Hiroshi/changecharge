@@ -34,3 +34,4 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="button_up" from="." to="." method="_on_ButtonFase_button_up"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/positive.png" type="Texture" id=1]
+[ext_resource path="res://assets/negative.png" type="Texture" id=2]
+[ext_resource path="res://assets/lampada1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Cyberoise.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/pauseBackGround.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 4 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fundo" type="TextureRect" parent="."]
+margin_left = 185.011
+margin_top = 96.5867
+margin_right = 885.011
+margin_bottom = 496.587
+rect_scale = Vector2( 1.3, 1.3 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lampada1" type="TextureRect" parent="."]
+margin_left = 436.991
+margin_top = 273.558
+margin_right = 500.991
+margin_bottom = 353.558
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lampada2" type="TextureRect" parent="."]
+margin_left = 583.151
+margin_top = 270.76
+margin_right = 647.151
+margin_bottom = 350.76
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lampada3" type="TextureRect" parent="."]
+margin_left = 725.024
+margin_top = 270.219
+margin_right = 789.024
+margin_bottom = 350.219
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 373.611
+margin_top = 161.814
+margin_right = 897.611
+margin_bottom = 324.814
+custom_fonts/font = SubResource( 1 )
+text = "Level Completed
+"
+
+[node name="Menos" type="TextureRect" parent="."]
+margin_left = 310.655
+margin_top = 177.061
+margin_right = 353.655
+margin_bottom = 220.061
+texture = ExtResource( 2 )
+
+[node name="Mais" type="TextureRect" parent="."]
+margin_left = 923.94
+margin_top = 180.575
+margin_right = 966.94
+margin_bottom = 223.575
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
