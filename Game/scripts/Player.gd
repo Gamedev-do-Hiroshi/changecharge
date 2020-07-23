@@ -46,6 +46,7 @@ func _ready():
 	$Cor.texture = VERMELHO if Charge > 0 else AZUL
 	$Aura.texture = V_AURA if Charge > 0 else A_AURA
 	$Aura.modulate = Color(1,1,1,min(abs(Charge)/MAX_CHARGE - 1,20))
+	print("acendeu: ",acendeu )
 	acendeu = false
 	acesas = 0
 	t = 0.0

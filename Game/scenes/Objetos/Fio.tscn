@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/Objetos/Fio.gd" type="Script" id=1]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=2]
 bake_interval = 2.0
 _data = {
 "points": PoolVector2Array( 13.5339, 10.6631, -13.5339, -10.6631, -0.218334, -0.154364, 30.8614, 79.6918, -30.8614, -79.6918, -48.6251, 0.347717, 38.9254, 80.4594, -38.9254, -80.4594, -112.096, 8.6869, 13.0003, 12.2642, -13.0003, -12.2642, -172.323, 11.9299 )
@@ -14,4 +14,9 @@ script = ExtResource( 1 )
 cor = Color( 0.0705882, 0.0705882, 0.0705882, 1 )
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 1 )
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -0.218323, 0 )
+rotation = -3.02259
+loop = false

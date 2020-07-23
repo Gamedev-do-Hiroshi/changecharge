@@ -44,5 +44,6 @@ func _on_Lampada_body_entered(body):
 		pai_objeto.remove_child(objeto)
 		$Path2D/PathFollow2D.add_child(objeto)
 		objeto.set_owner($Path2D/PathFollow2D)
+		objeto.rotation = 0
 		objeto.scale = Vector2(0.3, 0.3)
 		objeto.position = Vector2()
