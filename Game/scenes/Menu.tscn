@@ -37,13 +37,16 @@ __meta__ = {
 }
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 656.0
-margin_top = 288.0
-margin_right = 736.0
-margin_bottom = 376.0
+margin_left = 664.0
+margin_top = 300.0
+margin_right = 744.0
+margin_bottom = 388.0
+rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 expand = true
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
