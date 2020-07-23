@@ -87,7 +87,6 @@ margin_bottom = 388.0
 rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
-texture_focused = ExtResource( 7 )
 expand = true
 stretch_mode = 3
 __meta__ = {

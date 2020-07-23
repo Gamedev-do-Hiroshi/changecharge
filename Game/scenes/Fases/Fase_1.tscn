@@ -8,7 +8,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Objetos/Ponta.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/Objetos/Fio.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Pausa.tscn" type="PackedScene" id=9]
 
 [node name="Fase_1" type="Node2D"]
 
@@ -16,6 +16,7 @@
 fase = 1
 
 [node name="quadro_negro" type="Sprite" parent="."]
+position = Vector2( -1.948, -1.94801 )
 texture = ExtResource( 1 )
 offset = Vector2( 640, 360 )
 
@@ -85,17 +86,8 @@ rotation = -0.00130579
 position = Vector2( 241.965, 410.11 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="Fio" parent="Fios" instance=ExtResource( 9 )]
-position = Vector2( 188.152, 412.543 )
-
-[node name="Fio2" parent="Fios" instance=ExtResource( 9 )]
-position = Vector2( 1161.4, 342.7 )
-rotation = 3.14159
-
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 321.864, 414.349 )
 Charge = -50.0
 
-[editable path="Fios/Fio"]
-
-[editable path="Fios/Fio2"]
+[node name="Pausa" parent="." instance=ExtResource( 9 )]
