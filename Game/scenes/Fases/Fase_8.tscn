@@ -27,8 +27,6 @@ position = Vector2( 4.16083, 0.277405 )
 texture = ExtResource( 6 )
 offset = Vector2( 640, 360 )
 
-[node name="Pausa" parent="." instance=ExtResource( 4 )]
-
 [node name="Obstaculos" type="Node2D" parent="."]
 
 [node name="Resistor" parent="Obstaculos" instance=ExtResource( 1 )]

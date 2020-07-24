@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/Obstaculos/Lapis.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Fases/Fase_1.gd" type="Script" id=2]
+[ext_resource path="res://assets/Backgrounds/quadro_negro.png" type="Texture" id=3]
+[ext_resource path="res://scenes/definicoes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Obstaculos/Giz.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Objetos/Ponta.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Carga.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Pausa.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=12]
+
+[node name="Fase_1" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Definicoes" parent="." instance=ExtResource( 4 )]
+fase = 1
+
+[node name="quadro_negro" type="Sprite" parent="."]
+position = Vector2( -1.948, -1.94801 )
+texture = ExtResource( 3 )
+offset = Vector2( 640, 360 )
+
+[node name="quadro_negro2" type="Sprite" parent="."]
+position = Vector2( 1273.74, 1.22533 )
+texture = ExtResource( 3 )
+offset = Vector2( 640, 360 )
+
+[node name="Obstaculos" type="Node2D" parent="."]
+
+[node name="Giz" parent="Obstaculos" instance=ExtResource( 6 )]
+position = Vector2( 426.909, 610.564 )
+rotation = 1.57291
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Giz5" parent="Obstaculos" instance=ExtResource( 6 )]
+modulate = Color( 0.992157, 1, 0.227451, 1 )
+position = Vector2( 921.58, 229.028 )
+rotation = 2.00516
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Giz4" parent="Obstaculos" instance=ExtResource( 6 )]
+position = Vector2( 312.685, 54.8484 )
+rotation = 1.57291
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Giz2" parent="Obstaculos" instance=ExtResource( 6 )]
+modulate = Color( 0.27451, 0.301961, 1, 1 )
+position = Vector2( 280.181, 591.113 )
+rotation = 1.81082
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Giz3" parent="Obstaculos" instance=ExtResource( 6 )]
+modulate = Color( 0.976471, 0.27451, 1, 1 )
+position = Vector2( 149.146, 143.683 )
+rotation = 3.68223
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Lapis" parent="Obstaculos" instance=ExtResource( 1 )]
+position = Vector2( 586.5, 594.236 )
+rotation = 0.894559
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Lapis2" parent="Obstaculos" instance=ExtResource( 1 )]
+position = Vector2( 476.295, 313.312 )
+rotation = -0.492196
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Cargas" type="Node2D" parent="."]
+rotation = -0.00130579
+
+[node name="Carga" parent="Cargas" instance=ExtResource( 8 )]
+position = Vector2( 303.279, 347.027 )
+Charge = 200
+
+[node name="Carga3" parent="Cargas" instance=ExtResource( 8 )]
+position = Vector2( 679.329, 245.546 )
+Charge = 200
+Trilha = true
+Comprimento = 100.0
+Angulo = 90.0
+
+[node name="Carga4" parent="Cargas" instance=ExtResource( 8 )]
+position = Vector2( 937.985, 474.177 )
+
+[node name="Fios" type="Node2D" parent="."]
+
+[node name="Tomada" parent="Fios" instance=ExtResource( 9 )]
+position = Vector2( 1138.7, 343.403 )
+rotation = -0.00130579
+
+[node name="Ponta" parent="Fios" instance=ExtResource( 7 )]
+position = Vector2( 241.965, 410.11 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Player" parent="." instance=ExtResource( 12 )]
+position = Vector2( 321.864, 414.349 )
+Charge = -50.0
+
+[node name="Pausa" parent="." instance=ExtResource( 11 )]
