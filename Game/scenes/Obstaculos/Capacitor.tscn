@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/Obstaculos/capacitor.png" type="Texture" id=1]
 
-[node name="Capacitor" type="Area2D"]
+[node name="Capacitor" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
