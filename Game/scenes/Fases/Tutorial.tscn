@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Backgrounds/quadro_negro.png" type="Texture" id=1]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 1 )
