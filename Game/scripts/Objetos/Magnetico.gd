@@ -8,9 +8,9 @@ export var Comprimento = 50.0
 onready var X = preload("res://scenes/X.tscn")
 
 func _ready():
-	
-	$Colisao.shape.extents.x = Comprimento/2
-	$Colisao.shape.extents.y = Altura/2
+	$Colisao.shape =  RectangleShape2D.new()
+	$Colisao.shape.extents.x = self.Comprimento/2
+	$Colisao.shape.extents.y = self.Altura/2
 	var esp = 20/(abs(B)+10) + 8
 	var nxh = floor((Comprimento + esp)/(16 + esp))
 	var nxv = floor((Altura + esp)/(16 + esp))
