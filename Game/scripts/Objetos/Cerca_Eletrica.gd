@@ -50,4 +50,4 @@ func _draw():
 func _on_Cerca_Eletrica_body_entered(body):
 	if body.get_groups().has("player"):
 		print("Cerca Eletrica: Player Morre")
-		body.morre()
+		body.morre("chocado")
