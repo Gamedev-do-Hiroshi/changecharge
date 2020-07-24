@@ -38,7 +38,7 @@ __meta__ = {
 [node name="Chapa1" type="Node2D" parent="."]
 script = ExtResource( 6 )
 
-[node name="ButtonFase" parent="Chapa1" instance=ExtResource( 2 )]
+[node name="ButtonFase1" parent="Chapa1" instance=ExtResource( 2 )]
 
 [node name="ButtonFase2" parent="Chapa1" instance=ExtResource( 2 )]
 number = 2
@@ -52,35 +52,35 @@ number = 4
 [node name="ButtonFase5" parent="Chapa1" instance=ExtResource( 2 )]
 number = 5
 
-[node name="ButtonFase10" parent="Chapa1" instance=ExtResource( 2 )]
-number = 11
-
-[node name="ButtonFase9" parent="Chapa1" instance=ExtResource( 2 )]
-number = 12
-
-[node name="ButtonFase8" parent="Chapa1" instance=ExtResource( 2 )]
-number = 13
-
-[node name="ButtonFase7" parent="Chapa1" instance=ExtResource( 2 )]
-number = 14
-
 [node name="ButtonFase6" parent="Chapa1" instance=ExtResource( 2 )]
-number = 15
-
-[node name="ButtonFase15" parent="Chapa1" instance=ExtResource( 2 )]
 number = 6
 
-[node name="ButtonFase14" parent="Chapa1" instance=ExtResource( 2 )]
+[node name="ButtonFase7" parent="Chapa1" instance=ExtResource( 2 )]
 number = 7
 
-[node name="ButtonFase13" parent="Chapa1" instance=ExtResource( 2 )]
+[node name="ButtonFase8" parent="Chapa1" instance=ExtResource( 2 )]
 number = 8
 
-[node name="ButtonFase12" parent="Chapa1" instance=ExtResource( 2 )]
+[node name="ButtonFase9" parent="Chapa1" instance=ExtResource( 2 )]
 number = 9
 
-[node name="ButtonFase11" parent="Chapa1" instance=ExtResource( 2 )]
+[node name="ButtonFase10" parent="Chapa1" instance=ExtResource( 2 )]
 number = 10
+
+[node name="ButtonFase11" parent="Chapa1" instance=ExtResource( 2 )]
+number = 11
+
+[node name="ButtonFase12" parent="Chapa1" instance=ExtResource( 2 )]
+number = 12
+
+[node name="ButtonFase13" parent="Chapa1" instance=ExtResource( 2 )]
+number = 13
+
+[node name="ButtonFase14" parent="Chapa1" instance=ExtResource( 2 )]
+number = 14
+
+[node name="ButtonFase15" parent="Chapa1" instance=ExtResource( 2 )]
+number = 15
 
 [node name="Chapa2" type="Node2D" parent="."]
 script = ExtResource( 6 )

@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/lampada2.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Label.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/font/Cyberoise.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/pauseBackGround.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 3 )
+
+[node name="NinePatchRect" type="NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -72.0
+margin_top = 20.0
+margin_right = 73.0
+margin_bottom = 73.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0.956863, 0.0784314, 0.0784314, 1 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 21.4054
+margin_top = -15.0
+margin_right = 80.4054
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 1 )
+text = "3/10"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

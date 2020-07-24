@@ -24,6 +24,8 @@ fase = 2
 texture = ExtResource( 4 )
 offset = Vector2( 640, 360 )
 
+[node name="Pausa" parent="." instance=ExtResource( 13 )]
+
 [node name="Obstaculos" type="Node2D" parent="."]
 
 [node name="Giz" parent="Obstaculos" instance=ExtResource( 6 )]

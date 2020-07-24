@@ -37,6 +37,7 @@ __meta__ = {
 [node name="TextureButton" type="TextureButton" parent="." groups=[
 "stop",
 ]]
+pause_mode = 2
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -60.0

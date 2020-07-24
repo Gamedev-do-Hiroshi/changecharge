@@ -12,8 +12,8 @@ var real_position_x
 var real_position_y
 var must_be_position_x
 var must_be_position_y
-var move = 1;
-
+var move = 1
+var block = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Label").text = str(number)
@@ -33,6 +33,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
+	if(block == 0):
+		$Block.visible = 0
+	
 	if(move == 0):
 		return
 	
@@ -60,6 +63,8 @@ func _process(delta):
 
 
 func _on_ButtonFase_button_up():
+	if(block == 1):
+		return
 	var nome = "res://scenes/Fases/Fase_" + str(number) + ".tscn"
 	get_tree().change_scene(nome)
 	pass # Replace with function body.

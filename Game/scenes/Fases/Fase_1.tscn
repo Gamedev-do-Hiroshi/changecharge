@@ -86,8 +86,20 @@ rotation = -0.00130579
 position = Vector2( 241.965, 410.11 )
 scale = Vector2( 1.5, 1.5 )
 
+[node name="Fio" parent="Fios" instance=ExtResource( 9 )]
+
+[node name="Fio2" parent="Fios" instance=ExtResource( 9 )]
+rotation = 3.14159
+transform = Transform2D( -1, 2.53518e-06, -2.53518e-06, -1, 0, 0 )
+
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 321.864, 414.349 )
 Charge = -50.0
 
 [node name="Pausa" parent="." instance=ExtResource( 9 )]
+
+[node name="Pausa" parent="." instance=ExtResource( 9 )]
+
+[editable path="Fios/Fio"]
+
+[editable path="Fios/Fio2"]
