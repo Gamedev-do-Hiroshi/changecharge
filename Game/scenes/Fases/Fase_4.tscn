@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/Backgrounds/quadro_negro.png" type="Texture" id=1]
 [ext_resource path="res://scenes/definicoes.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/Objetos/Fio.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Camera.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Pausa.tscn" type="PackedScene" id=15]
 
 [node name="Fase_4" type="Node2D"]
 script = ExtResource( 5 )
@@ -255,3 +256,5 @@ Charge = 100.0
 
 [node name="MainCamera" parent="." instance=ExtResource( 14 )]
 offset = Vector2( 1280, 0 )
+
+[node name="Pausa" parent="." instance=ExtResource( 15 )]

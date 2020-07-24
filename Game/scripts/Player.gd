@@ -83,8 +83,8 @@ func movimento(delta):
 	
 	for carga in cargas:
 		aux = (self.position - carga.posicao).length()
-		ace += K * (self.position - carga.posicao).normalized() * carga.Charge * Charge / (aux * aux)
-		dace -= 2*K * (self.position - carga.posicao).normalized() * carga.Charge * Charge / (aux * aux * aux)
+		ace += K * (self.position - carga.gposicao).normalized() * carga.Charge * Charge / (aux * aux)
+		dace -= 2*K * (self.position - carga.gposicao).normalized() * carga.Charge * Charge / (aux * aux * aux)
 	
 	ace += Charge * campo_magnetico * vel.tangent()
 	dace += Charge * campo_magnetico * ace.tangent()

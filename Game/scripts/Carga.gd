@@ -9,6 +9,7 @@ export var Trilha = false
 export var Comprimento = 0.0
 export var Angulo = 0.0
 var posicao = Vector2()
+var gposicao = Vector2()
 
 onready var scroll1 = preload("res://assets/scroll/scroll1.png")
 onready var scroll2 = preload("res://assets/scroll/scroll2.png")
@@ -41,6 +42,7 @@ func _ready():
 	
 	segurando_mouse = false
 	posicao = self.position
+	gposicao = self.global_position
 	defasagem = Vector2()
 
 func _input(event):
@@ -73,6 +75,7 @@ func _input(event):
 		$Sprite.position = posicao
 		$Colisao.position = posicao
 		$Contato.position = posicao
+	gposicao = $Sprite.global_position
 
 func trilha():
 	
