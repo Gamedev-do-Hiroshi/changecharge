@@ -69,16 +69,19 @@ anchor_top = 12.754
 anchor_right = 5.699
 anchor_bottom = 12.754
 margin_left = -0.358017
-margin_top = 0.33197
+margin_top = -0.52533
 margin_right = 715.642
-margin_bottom = 33.332
+margin_bottom = 32.4747
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "Opa tudo bom guy como vai voces"
 text = "Opa tudo bom guy como vai voces"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite" type="Sprite" parent="DialogBox"]
-position = Vector2( 922.225, 600.098 )
+position = Vector2( 922.225, 605.729 )
 rotation = 1.5708
 scale = Vector2( 0.415089, 0.478953 )
 texture = ExtResource( 1 )
