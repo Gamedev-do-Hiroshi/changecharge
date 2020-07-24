@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Change Charge"
-run/main_scene="res://scenes/Fases/Fase_0.tscn"
+run/main_scene="res://scenes/Fase.tscn"
 config/icon="res://icon.png"
 
 [display]

@@ -1,8 +1,8 @@
 extends Control
 
-
 var menu = preload("res://scenes/Menu.tscn")
 var child
+var seleciona = preload("res://scripts/chooseLevel.gd").new()
 
 func _ready():
 	visible = false
@@ -32,6 +32,14 @@ func pause():
 func passou():
 	child.cria("passou")
 	visible = true
+	
+	var nome = get_parent().get_parent().get_name()
+	var num = ""
+	for i in range(5, nome.length()):
+		num = num+nome[i]
+		
+	seleciona.save(num, str(1))
+	
 	pause()
 	#$TextureButton.visible = false
 	#$TextureButton.queue_free()
