@@ -1,6 +1,6 @@
 extends Control
 
-var dialog = ["Hi, my name is Hiroshi", "Your mission, and mine, is to make me arrive to the power plug"]
+var dialog = ["Hi, my name is Hiroshi", "I touch my lick in to a power plug and now i ve become a charge", "Help me to become a human again"]
 
 var dialog_index = 0
 var finished = false
