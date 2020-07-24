@@ -202,5 +202,3 @@ position = Vector2( 259.622, 378.52 )
 Charge = 0.0
 
 [node name="MainCamera" parent="." instance=ExtResource( 13 )]
-
-[node name="Pausa" parent="." instance=ExtResource( 15 )]

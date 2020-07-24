@@ -109,5 +109,3 @@ scale = Vector2( 0.666667, 0.666667 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 294.784, 585.79 )
-
-[node name="Pausa" parent="." instance=ExtResource( 13 )]

@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Change Charge"
-run/main_scene="res://scenes/Fase.tscn"
+run/main_scene="res://scenes/Title_Screen.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -29,6 +29,10 @@ config/icon="res://icon.png"
 window/size/width=1280
 window/size/height=720
 window/size/resizable=false
+
+[editor_plugins]
+
+enabled=PoolStringArray( "EXP-System-Dialog" )
 
 [input]
 
