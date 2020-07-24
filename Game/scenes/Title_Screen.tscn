@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/Title_Screen.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Back_ground.tscn" type="PackedScene" id=2]
@@ -8,8 +8,6 @@
 [ext_resource path="res://Sprites/Main Menu/lightning.png" type="Texture" id=6]
 [ext_resource path="res://music/Ludum Dare 38 - Track 2.wav" type="AudioStream" id=7]
 [ext_resource path="res://music/select.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/negative.png" type="Texture" id=9]
-[ext_resource path="res://assets/positive.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Main Menu/play_button_on_hover.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Main Menu/exit_button_on_hover.png" type="Texture" id=12]
 
@@ -299,14 +297,5 @@ autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-
-[node name="Mais" type="Sprite" parent="."]
-modulate = Color( 0.784314, 0.392157, 0.392157, 1 )
-position = Vector2( 768.425, 681.269 )
-texture = ExtResource( 9 )
-
-[node name="Menos" type="Sprite" parent="."]
-position = Vector2( 537.049, 25.7352 )
-texture = ExtResource( 10 )
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
