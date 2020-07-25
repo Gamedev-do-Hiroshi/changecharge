@@ -240,10 +240,10 @@ __meta__ = {
 
 [node name="Letra10" type="RichTextLabel" parent="Titulo"]
 modulate = Color( 0.827451, 0.788235, 0.2, 1 )
-margin_left = 599.263
-margin_top = 442.999
-margin_right = 909.263
-margin_bottom = 497.999
+margin_left = 599.0
+margin_top = 443.0
+margin_right = 672.0
+margin_bottom = 498.0
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]R"
@@ -255,10 +255,10 @@ __meta__ = {
 
 [node name="Letra11" type="RichTextLabel" parent="Titulo"]
 modulate = Color( 0.827451, 0.788235, 0.2, 1 )
-margin_left = 639.263
-margin_top = 498.999
-margin_right = 949.266
-margin_bottom = 553.999
+margin_left = 639.0
+margin_top = 499.0
+margin_right = 733.0
+margin_bottom = 554.0
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]G"
@@ -270,10 +270,10 @@ __meta__ = {
 
 [node name="Letra12" type="RichTextLabel" parent="Titulo"]
 modulate = Color( 0.827451, 0.788235, 0.2, 1 )
-margin_left = 683.334
-margin_top = 550.051
-margin_right = 993.339
-margin_bottom = 605.051
+margin_left = 683.0
+margin_top = 550.0
+margin_right = 752.0
+margin_bottom = 605.0
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "[shake  RATE = 10level = 5 ]E"
