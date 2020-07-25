@@ -1,0 +1,165 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://scenes/Objetos/Buraco_Negro.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Backgrounds/background_circuito.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Objetos/Lampada.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Objetos/Cerca_Eletrica.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Obstaculos/Giz.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Obstaculos/Resistor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Pausa.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Objetos/Pilha.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/definicoes.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Objetos/Magnetico.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Objetos/Ponta.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Carga.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Obstaculos/Capacitor.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/Obstaculos/Lapis.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/Inimigos/Ciclope.tscn" type="PackedScene" id=17]
+
+[node name="Fase_12" type="Node2D"]
+
+[node name="Definicoes" parent="." instance=ExtResource( 10 )]
+fase = 12
+limite_dir = 2560
+
+[node name="quadro_negro" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+offset = Vector2( 640, 360 )
+
+[node name="Obstaculos" type="Node2D" parent="."]
+
+[node name="Magnetico" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 548.356, 387.904 )
+B = -0.1
+
+[node name="Magnetico2" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 946.714, 351.883 )
+B = -0.1
+
+[node name="Magnetico3" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 944.595, 243.818 )
+B = -0.1
+
+[node name="Resistor" parent="Obstaculos" instance=ExtResource( 7 )]
+position = Vector2( 509.37, 472.941 )
+rotation = 3.12414
+scale = Vector2( 1.4, 1.4 )
+
+[node name="Pilha2" parent="Obstaculos" instance=ExtResource( 9 )]
+position = Vector2( 385.733, 297.337 )
+Carga = 80.0
+
+[node name="Cerca_Eletrica" parent="Obstaculos" instance=ExtResource( 5 )]
+position = Vector2( 165.539, 318.019 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Cerca_Eletrica3" parent="Obstaculos" instance=ExtResource( 5 )]
+position = Vector2( 128.43, 175.784 )
+rotation = 0.775115
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Cerca_Eletrica2" parent="Obstaculos" instance=ExtResource( 5 )]
+position = Vector2( 300.989, 176.796 )
+rotation = 1.88387
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Cargas" type="Node2D" parent="."]
+rotation = -0.00130579
+
+[node name="Lampada" parent="Cargas" instance=ExtResource( 4 )]
+position = Vector2( 257.003, 512.523 )
+rotation = 0.639429
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Lampada2" parent="Cargas" instance=ExtResource( 4 )]
+position = Vector2( 99.8262, 290.764 )
+rotation = -8.81909
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Carga4" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 380.902, 215.709 )
+Charge = 50
+
+[node name="Carga11" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 78.0172, 120.54 )
+Charge = 50
+
+[node name="Carga5" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 171.11, 397.695 )
+Charge = 50
+
+[node name="Carga6" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 366.952, 383.765 )
+Charge = 50
+
+[node name="Carga7" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 186.327, 608.388 )
+Charge = 30
+
+[node name="Carga8" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 554.211, 299.868 )
+Charge = 50
+
+[node name="Carga9" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 368.183, 611.754 )
+Charge = 50
+
+[node name="Carga10" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 681.277, 44.1904 )
+rotation = 1.84753
+Charge = -150
+
+[node name="Carga12" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 954.763, 532.599 )
+rotation = 1.84753
+Charge = 125
+
+[node name="Carga13" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 944.697, 127.87 )
+rotation = 1.84753
+Charge = 125
+
+[node name="Buraco_Negro" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 270.674, 394.884 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Fios" type="Node2D" parent="."]
+
+[node name="Tomada" parent="Fios" instance=ExtResource( 13 )]
+position = Vector2( 1111.43, 237.227 )
+rotation = -0.049212
+
+[node name="Ponta" parent="Fios" instance=ExtResource( 12 )]
+position = Vector2( 198.4, 153.124 )
+rotation = 1.60936
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 213.06, 213.761 )
+rotation = 0.846638
+Charge = -50.0
+
+[node name="Ciclope" parent="." instance=ExtResource( 17 )]
+position = Vector2( 549.1, 189.88 )
+rotation = 0.846638
+carga = 10.0
+
+[node name="Capacitor" parent="." instance=ExtResource( 15 )]
+position = Vector2( 500.418, 299.65 )
+
+[node name="Lapis" parent="." instance=ExtResource( 16 )]
+position = Vector2( 672, 424 )
+rotation = 1.98763
+
+[node name="Resistor" parent="." instance=ExtResource( 7 )]
+position = Vector2( 863.497, 350.999 )
+
+[node name="Resistor2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1022.45, 353.118 )
+
+[node name="Pausa" parent="." instance=ExtResource( 8 )]
+
+[node name="Giz" parent="." instance=ExtResource( 6 )]
+position = Vector2( 626.772, 618.249 )
+rotation = -1.56367

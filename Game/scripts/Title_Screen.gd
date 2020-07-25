@@ -35,18 +35,12 @@ func _physics_process(delta):
 		audio.stream = thunder
 		audio.play()
 		play = false
-	$AnimationPlayer.play("twinkle")	
+	$AnimationPlayer.play("twinkle")
 
 func _on_TextureButton_pressed():
 	$AudioStreamPlayer2.play()
 	yield($AudioStreamPlayer2,"finished")
 	get_tree().change_scene("res://scenes/chooseLevel.tscn")
 
-
 func _on_TextureButton2_pressed():
 	get_tree().quit()
-
-
-
-		
-		

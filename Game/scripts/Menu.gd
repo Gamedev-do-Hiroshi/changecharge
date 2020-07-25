@@ -34,7 +34,6 @@ func _on_TextureButton2_pressed():
 	get_tree().change_scene("res://scenes/chooseLevel.tscn")
 	get_tree().paused = false
 
-
 func _on_TextureButton_pressed():
 	get_tree().paused = false
 	print("tipo: ", tipo)

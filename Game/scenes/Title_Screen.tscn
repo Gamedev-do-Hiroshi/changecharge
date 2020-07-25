@@ -6,7 +6,7 @@
 [ext_resource path="res://Sprites/Main Menu/exit_button.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/font/ImPerfect23.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://Sprites/Main Menu/lightning.png" type="Texture" id=6]
-[ext_resource path="res://music/Ludum Dare 38 - Track 2.wav" type="AudioStream" id=7]
+[ext_resource path="res://music/main_menu.wav" type="AudioStream" id=7]
 [ext_resource path="res://music/select.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sprites/Main Menu/play_button_on_hover.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Main Menu/exit_button_on_hover.png" type="Texture" id=12]

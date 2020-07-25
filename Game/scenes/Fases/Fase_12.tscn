@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/Objetos/Buraco_Negro.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Backgrounds/background_circuito.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Objetos/Lampada.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Objetos/Cerca_Eletrica.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Obstaculos/Giz.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Obstaculos/Resistor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Pausa.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Objetos/Pilha.tscn" type="PackedScene" id=9]
@@ -15,151 +14,424 @@
 [ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Carga.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Obstaculos/Capacitor.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/Obstaculos/Lapis.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/Inimigos/Ciclope.tscn" type="PackedScene" id=17]
 
 [node name="Fase_12" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 123.275, 346.469, 659.416 ],
+"_edit_vertical_guides_": [ 241.515 ]
+}
 
 [node name="Definicoes" parent="." instance=ExtResource( 10 )]
 fase = 12
 limite_dir = 2560
 
 [node name="quadro_negro" type="Sprite" parent="."]
+position = Vector2( 0, -1.80637 )
 texture = ExtResource( 3 )
 offset = Vector2( 640, 360 )
 
 [node name="Obstaculos" type="Node2D" parent="."]
-
-[node name="Magnetico" parent="Obstaculos" instance=ExtResource( 11 )]
-position = Vector2( 548.356, 387.904 )
-B = -0.1
+position = Vector2( 0, -23 )
 
 [node name="Magnetico2" parent="Obstaculos" instance=ExtResource( 11 )]
-position = Vector2( 946.714, 351.883 )
+position = Vector2( 407.123, 172.755 )
 B = -0.1
 
 [node name="Magnetico3" parent="Obstaculos" instance=ExtResource( 11 )]
-position = Vector2( 944.595, 243.818 )
+position = Vector2( 291.615, 173.822 )
 B = -0.1
 
-[node name="Resistor" parent="Obstaculos" instance=ExtResource( 7 )]
-position = Vector2( 509.37, 472.941 )
-rotation = 3.12414
-scale = Vector2( 1.4, 1.4 )
+[node name="Magnetico5" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 637.162, 173.463 )
+B = -0.1
+
+[node name="Magnetico4" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 521.655, 173.228 )
+B = -0.1
+
+[node name="Magnetico9" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 869.786, 173.041 )
+B = -0.1
+
+[node name="Magnetico8" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 754.279, 172.806 )
+B = -0.1
+
+[node name="Magnetico7" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 1099.83, 173.749 )
+B = -0.1
+
+[node name="Magnetico6" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 984.318, 173.514 )
+B = -0.1
+
+[node name="Magnetico17" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 407.111, 585.775 )
+B = -0.1
+
+[node name="Magnetico16" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 291.603, 586.841 )
+B = -0.1
+
+[node name="Magnetico15" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 637.15, 586.483 )
+B = -0.1
+
+[node name="Magnetico14" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 521.642, 586.247 )
+B = -0.1
+
+[node name="Magnetico13" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 869.774, 586.061 )
+B = -0.1
+
+[node name="Magnetico12" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 754.266, 585.826 )
+B = -0.1
+
+[node name="Magnetico11" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 1099.81, 586.769 )
+B = -0.1
+
+[node name="Magnetico10" parent="Obstaculos" instance=ExtResource( 11 )]
+position = Vector2( 984.306, 586.533 )
+B = -0.1
 
 [node name="Pilha2" parent="Obstaculos" instance=ExtResource( 9 )]
-position = Vector2( 385.733, 297.337 )
+position = Vector2( 362.406, 485.181 )
 Carga = 80.0
 
 [node name="Cerca_Eletrica" parent="Obstaculos" instance=ExtResource( 5 )]
-position = Vector2( 165.539, 318.019 )
-scale = Vector2( 0.6, 0.6 )
-
-[node name="Cerca_Eletrica3" parent="Obstaculos" instance=ExtResource( 5 )]
-position = Vector2( 128.43, 175.784 )
-rotation = 0.775115
+position = Vector2( 388.254, 390.149 )
+rotation = 1.5708
 scale = Vector2( 0.6, 0.6 )
 
 [node name="Cerca_Eletrica2" parent="Obstaculos" instance=ExtResource( 5 )]
-position = Vector2( 300.989, 176.796 )
-rotation = 1.88387
+position = Vector2( 608.254, 388.097 )
+rotation = 1.5708
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Cerca_Eletrica4" parent="Obstaculos" instance=ExtResource( 5 )]
+position = Vector2( 824.254, 390.149 )
+rotation = 1.5708
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Cerca_Eletrica3" parent="Obstaculos" instance=ExtResource( 5 )]
+position = Vector2( 1044.25, 388.097 )
+rotation = 1.5708
 scale = Vector2( 0.6, 0.6 )
 
 [node name="Cargas" type="Node2D" parent="."]
+position = Vector2( 0, -23 )
 rotation = -0.00130579
 
-[node name="Lampada" parent="Cargas" instance=ExtResource( 4 )]
-position = Vector2( 257.003, 512.523 )
-rotation = 0.639429
-scale = Vector2( 1.5, 1.5 )
-
 [node name="Lampada2" parent="Cargas" instance=ExtResource( 4 )]
-position = Vector2( 99.8262, 290.764 )
-rotation = -8.81909
+position = Vector2( 1220.17, 177.986 )
+rotation = 0.331613
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Carga4" parent="Cargas" instance=ExtResource( 14 )]
-position = Vector2( 380.902, 215.709 )
+position = Vector2( 385.311, 342.526 )
 Charge = 50
-
-[node name="Carga11" parent="Cargas" instance=ExtResource( 14 )]
-position = Vector2( 78.0172, 120.54 )
-Charge = 50
-
-[node name="Carga5" parent="Cargas" instance=ExtResource( 14 )]
-position = Vector2( 171.11, 397.695 )
-Charge = 50
-
-[node name="Carga6" parent="Cargas" instance=ExtResource( 14 )]
-position = Vector2( 366.952, 383.765 )
-Charge = 50
-
-[node name="Carga7" parent="Cargas" instance=ExtResource( 14 )]
-position = Vector2( 186.327, 608.388 )
-Charge = 30
 
 [node name="Carga8" parent="Cargas" instance=ExtResource( 14 )]
-position = Vector2( 554.211, 299.868 )
+position = Vector2( 346.581, 680.876 )
 Charge = 50
 
 [node name="Carga9" parent="Cargas" instance=ExtResource( 14 )]
-position = Vector2( 368.183, 611.754 )
+position = Vector2( 462.532, 681.711 )
 Charge = 50
 
 [node name="Carga10" parent="Cargas" instance=ExtResource( 14 )]
-position = Vector2( 681.277, 44.1904 )
-rotation = 1.84753
-Charge = -150
+position = Vector2( 580.395, 681.552 )
+Charge = 50
 
 [node name="Carga12" parent="Cargas" instance=ExtResource( 14 )]
-position = Vector2( 954.763, 532.599 )
-rotation = 1.84753
-Charge = 125
+position = Vector2( 811.121, 681.536 )
+Charge = 50
 
 [node name="Carga13" parent="Cargas" instance=ExtResource( 14 )]
-position = Vector2( 944.697, 127.87 )
-rotation = 1.84753
-Charge = 125
+position = Vector2( 927.072, 682 )
+Charge = 50
+
+[node name="Carga14" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 1043.02, 682.148 )
+Charge = 50
+
+[node name="Carga23" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 1208.27, 504.656 )
+Charge = 50
+
+[node name="Carga11" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 698.026, 681.848 )
+Charge = 50
+
+[node name="Carga21" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 347.353, 89.6318 )
+Charge = 50
+
+[node name="Carga20" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 463.304, 90.4663 )
+Charge = 50
+
+[node name="Carga19" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 581.167, 90.3077 )
+Charge = 50
+
+[node name="Carga18" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 811.893, 90.2922 )
+Charge = 50
+
+[node name="Carga17" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 927.844, 90.7563 )
+Charge = 50
+
+[node name="Carga16" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 1043.8, 90.9038 )
+Charge = 50
+
+[node name="Carga22" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 1200.62, 284.683 )
+Charge = 50
+
+[node name="Carga15" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 698.798, 90.6039 )
+Charge = 50
+
+[node name="Carga5" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 608.19, 429.848 )
+Charge = 50
+
+[node name="Carga6" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 824.61, 345.555 )
+Charge = 50
+
+[node name="Carga7" parent="Cargas" instance=ExtResource( 14 )]
+position = Vector2( 1043.03, 434.884 )
+Charge = 50
 
 [node name="Buraco_Negro" parent="Cargas" instance=ExtResource( 1 )]
-position = Vector2( 270.674, 394.884 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 505.976, 507.187 )
+scale = Vector2( 0.08, 0.08 )
+
+[node name="Buraco_Negro2" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 931.572, 246.903 )
+scale = Vector2( 0.08, 0.08 )
 
 [node name="Fios" type="Node2D" parent="."]
+position = Vector2( 0, -23 )
 
 [node name="Tomada" parent="Fios" instance=ExtResource( 13 )]
-position = Vector2( 1111.43, 237.227 )
+position = Vector2( 1232.5, 390.424 )
 rotation = -0.049212
 
 [node name="Ponta" parent="Fios" instance=ExtResource( 12 )]
-position = Vector2( 198.4, 153.124 )
-rotation = 1.60936
+position = Vector2( 168.261, 475.829 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 213.06, 213.761 )
-rotation = 0.846638
+position = Vector2( 247.609, 453.189 )
 Charge = -50.0
 
 [node name="Ciclope" parent="." instance=ExtResource( 17 )]
-position = Vector2( 549.1, 189.88 )
-rotation = 0.846638
+position = Vector2( 1208.21, 594.138 )
+rotation = 0.168124
 carga = 10.0
 
 [node name="Capacitor" parent="." instance=ExtResource( 15 )]
-position = Vector2( 500.418, 299.65 )
-
-[node name="Lapis" parent="." instance=ExtResource( 16 )]
-position = Vector2( 672, 424 )
-rotation = 1.98763
+position = Vector2( 706.097, 28.7696 )
 
 [node name="Resistor" parent="." instance=ExtResource( 7 )]
-position = Vector2( 863.497, 350.999 )
+position = Vector2( 451.242, 367.112 )
+
+[node name="Resistor11" parent="." instance=ExtResource( 7 )]
+position = Vector2( 41.8804, 15.657 )
+rotation = 1.5708
+
+[node name="Resistor12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 127.561, 15.657 )
+rotation = 1.5708
+
+[node name="Resistor14" parent="." instance=ExtResource( 7 )]
+position = Vector2( 213.308, 15.5704 )
+rotation = 1.5708
+
+[node name="Resistor13" parent="." instance=ExtResource( 7 )]
+position = Vector2( 298.988, 15.5704 )
+rotation = 1.5708
+
+[node name="Resistor18" parent="." instance=ExtResource( 7 )]
+position = Vector2( 384.542, 14.9936 )
+rotation = 1.5708
+
+[node name="Resistor17" parent="." instance=ExtResource( 7 )]
+position = Vector2( 470.222, 14.9936 )
+rotation = 1.5708
+
+[node name="Resistor16" parent="." instance=ExtResource( 7 )]
+position = Vector2( 555.969, 13.2368 )
+rotation = 1.5708
+
+[node name="Resistor15" parent="." instance=ExtResource( 7 )]
+position = Vector2( 641.65, 13.2368 )
+rotation = 1.5708
+
+[node name="Resistor26" parent="." instance=ExtResource( 7 )]
+position = Vector2( 728.336, 14.3272 )
+rotation = 1.5708
+
+[node name="Resistor25" parent="." instance=ExtResource( 7 )]
+position = Vector2( 814.016, 14.3272 )
+rotation = 1.5708
+
+[node name="Resistor24" parent="." instance=ExtResource( 7 )]
+position = Vector2( 899.763, 14.2406 )
+rotation = 1.5708
+
+[node name="Resistor23" parent="." instance=ExtResource( 7 )]
+position = Vector2( 985.444, 14.2406 )
+rotation = 1.5708
+
+[node name="Resistor22" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1071, 13.6638 )
+rotation = 1.5708
+
+[node name="Resistor21" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1156.68, 13.6638 )
+rotation = 1.5708
+
+[node name="Resistor20" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1242.42, 13.5772 )
+rotation = 1.5708
+
+[node name="Resistor19" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1328.11, 12.9905 )
+rotation = 1.5708
+
+[node name="Resistor46" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1271.09, 308.785 )
+
+[node name="Resistor45" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1269.27, 219.931 )
+
+[node name="Resistor44" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1269.4, 65.9374 )
+
+[node name="Resistor43" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1267.81, 446.152 )
+
+[node name="Resistor47" parent="." instance=ExtResource( 7 )]
+position = Vector2( 17.5132, 74.8708 )
+
+[node name="Resistor49" parent="." instance=ExtResource( 7 )]
+position = Vector2( 17.5132, 163.725 )
+
+[node name="Resistor50" parent="." instance=ExtResource( 7 )]
+position = Vector2( 19.0999, 252.578 )
+
+[node name="Resistor51" parent="." instance=ExtResource( 7 )]
+position = Vector2( 19.0999, 347.779 )
+
+[node name="Resistor52" parent="." instance=ExtResource( 7 )]
+position = Vector2( 20.6866, 533.419 )
+
+[node name="Resistor53" parent="." instance=ExtResource( 7 )]
+position = Vector2( 22.2732, 625.446 )
+
+[node name="Resistor48" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1266.23, 633.38 )
+
+[node name="Resistor42" parent="." instance=ExtResource( 7 )]
+position = Vector2( 35.6987, 701.83 )
+rotation = 1.5708
+
+[node name="Resistor41" parent="." instance=ExtResource( 7 )]
+position = Vector2( 121.379, 701.83 )
+rotation = 1.5708
+
+[node name="Resistor40" parent="." instance=ExtResource( 7 )]
+position = Vector2( 207.126, 701.743 )
+rotation = 1.5708
+
+[node name="Resistor39" parent="." instance=ExtResource( 7 )]
+position = Vector2( 292.806, 701.743 )
+rotation = 1.5708
+
+[node name="Resistor38" parent="." instance=ExtResource( 7 )]
+position = Vector2( 378.36, 701.167 )
+rotation = 1.5708
+
+[node name="Resistor37" parent="." instance=ExtResource( 7 )]
+position = Vector2( 464.041, 701.167 )
+rotation = 1.5708
+
+[node name="Resistor36" parent="." instance=ExtResource( 7 )]
+position = Vector2( 549.787, 699.41 )
+rotation = 1.5708
+
+[node name="Resistor35" parent="." instance=ExtResource( 7 )]
+position = Vector2( 635.468, 699.41 )
+rotation = 1.5708
+
+[node name="Resistor34" parent="." instance=ExtResource( 7 )]
+position = Vector2( 722.154, 700.5 )
+rotation = 1.5708
+
+[node name="Resistor33" parent="." instance=ExtResource( 7 )]
+position = Vector2( 807.835, 700.5 )
+rotation = 1.5708
+
+[node name="Resistor32" parent="." instance=ExtResource( 7 )]
+position = Vector2( 893.581, 700.414 )
+rotation = 1.5708
+
+[node name="Resistor31" parent="." instance=ExtResource( 7 )]
+position = Vector2( 979.262, 700.414 )
+rotation = 1.5708
+
+[node name="Resistor30" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1064.82, 699.837 )
+rotation = 1.5708
+
+[node name="Resistor29" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1150.5, 699.837 )
+rotation = 1.5708
+
+[node name="Resistor28" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1236.24, 699.75 )
+rotation = 1.5708
+
+[node name="Resistor27" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1321.92, 699.75 )
+rotation = 1.5708
+
+[node name="Resistor3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 320.558, 367.207 )
+
+[node name="Resistor5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 671.242, 366.059 )
+
+[node name="Resistor4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 541.558, 365.699 )
+
+[node name="Resistor9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 887.242, 367.112 )
+
+[node name="Resistor8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 756.558, 367.207 )
+
+[node name="Resistor7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1107.24, 366.059 )
+
+[node name="Resistor6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 977.558, 366.154 )
 
 [node name="Resistor2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1022.45, 353.118 )
+position = Vector2( 1218.54, 421.961 )
+rotation = 0.785398
+
+[node name="Resistor10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1221.54, 317.961 )
+rotation = -0.785398
 
 [node name="Pausa" parent="." instance=ExtResource( 8 )]
-
-[node name="Giz" parent="." instance=ExtResource( 6 )]
-position = Vector2( 626.772, 618.249 )
-rotation = -1.56367

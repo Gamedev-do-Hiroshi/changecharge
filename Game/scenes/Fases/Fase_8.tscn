@@ -25,8 +25,6 @@ fase = 8
 position = Vector2( 0, -2.27209 )
 offset = Vector2( 640, 360 )
 
-[node name="Pausa" parent="." instance=ExtResource( 4 )]
-
 [node name="Obstaculos" type="Node2D" parent="."]
 
 [node name="Magnetico2" parent="Obstaculos" instance=ExtResource( 5 )]
