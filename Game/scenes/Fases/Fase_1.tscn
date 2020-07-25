@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Backgrounds/quadro_negro.png" type="Texture" id=1]
 [ext_resource path="res://scenes/definicoes.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Objetos/Ponta.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Pausa.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/Fases/Fase_1.gd" type="Script" id=10]
 [ext_resource path="res://assets/seta.png" type="Texture" id=11]
 [ext_resource path="res://scenes/Dialog.tscn" type="PackedScene" id=12]
 
@@ -70,6 +71,7 @@ rotation = -0.00130579
 
 [node name="Carga" parent="Cargas" instance=ExtResource( 5 )]
 position = Vector2( 303.279, 347.027 )
+Charge = 200
 
 [node name="Carga3" parent="Cargas" instance=ExtResource( 5 )]
 position = Vector2( 679.329, 245.546 )
@@ -77,6 +79,7 @@ Charge = 200
 Trilha = true
 Comprimento = 100.0
 Angulo = 90.0
+porcentagem_trilha = 50.0
 
 [node name="Carga4" parent="Cargas" instance=ExtResource( 5 )]
 position = Vector2( 937.985, 474.177 )
