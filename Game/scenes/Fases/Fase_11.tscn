@@ -216,6 +216,7 @@ script = ExtResource( 15 )
 Charge = 0
 Trilha = true
 Comprimento = 100.0
+porcentagem_trilha = 50.0
 
 [node name="Sprite" type="AnimatedSprite" parent="cargas/Carga"]
 position = Vector2( -0.449677, -0.449673 )

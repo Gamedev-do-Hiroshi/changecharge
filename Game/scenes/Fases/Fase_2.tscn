@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Obstaculos/Lapis.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://scenes/Carga.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Obstaculos/Giz.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Objetos/Ponta.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/Objetos/Fio.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/Fases/Fase_2.gd" type="Script" id=10]
 [ext_resource path="res://scenes/Objetos/Lampada.tscn" type="PackedScene" id=11]
@@ -95,17 +94,8 @@ Charge = 100
 position = Vector2( 1138.7, 343.403 )
 rotation = -0.00130579
 
-[node name="Fio2" parent="Fios/Tomada" instance=ExtResource( 8 )]
-position = Vector2( 22.7009, -0.673401 )
-rotation = -3.14029
-
 [node name="Ponta" parent="Fios" instance=ExtResource( 7 )]
-position = Vector2( 134.824, 585.432 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Fio" parent="Fios/Ponta" instance=ExtResource( 8 )]
-position = Vector2( -35.8753, 1.62201 )
-scale = Vector2( 0.666667, 0.666667 )
+position = Vector2( 190.085, 587.636 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 294.784, 585.79 )
