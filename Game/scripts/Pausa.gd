@@ -4,13 +4,22 @@ var menu = preload("res://scenes/Menu.tscn")
 var child
 var seleciona = preload("res://scripts/chooseLevel.gd").new()
 var win = preload("res://music/sfx/victory.wav")
-
-
+#var eat = preload("res://music/sfx/eat.wav")
+var eat = preload("res://music/sfx/glup.wav")
+var succao = preload("res://music/sfx/succao-2.wav")
+var shock = preload("res://music/sfx/shock.wav")
+var music = preload("res://music/sfx/hiroshi_music.wav")
+var musica
 func _ready():
 	visible = false
 	child = menu.instance()
 	child.cria("pausa")
 	add_child(child)
+	musica = AudioStreamPlayer.new()
+	add_child(musica)
+	musica.stream = music
+	musica.volume_db = -20
+	musica.play()
 	
 func _input(event):
 	if event.is_action_pressed("pause") and child.tipo == "pausa":
@@ -55,8 +64,18 @@ func passou():
 func perdeu(tipo):
 	child.cria("perdeu")
 	visible = true
+	var audio = AudioStreamPlayer.new()
+	add_child(audio)
+	audio.volume_db = -10
+	if tipo == "ciclope":
+		audio.stream = eat
+		audio.volume_db = 5
+	elif tipo == "chocado":
+		audio.stream = shock
+	elif tipo == "sugado":
+		audio.stream = succao
+	audio.play()
 	pause()
-		
 	#$TextureButton.visible = false
 	#$TextureButton.queue_free()
 	pass

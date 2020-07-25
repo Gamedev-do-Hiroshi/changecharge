@@ -107,10 +107,8 @@ func trilha():
 	trilha2.show_behind_parent = true
 	trilha3.show_behind_parent = true
 	
-	
 func _on_Carga_mouse_entered():
 	mouse_entrou = true
-
 
 func _on_Carga_mouse_exited():
 	mouse_entrou = false

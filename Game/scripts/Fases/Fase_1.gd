@@ -5,7 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var t = 0.0
-var state = false
+var state = 0
 onready var carga = $Cargas/Carga
 onready var carga2 = $Cargas/Carga3
 onready var trilha = $Cargas/Carga3/Sprite
@@ -19,17 +19,20 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	t += delta
-	if(!state):
+	if state == 0:
+		move(true)
+	elif state == 1:
 		if abs(trilha.position.x + carga2.Comprimento/2) < 1 and carga2.Charge < 0 and carga.Charge < 0:
 			move(false)
 			for seta in get_tree().get_nodes_in_group("setas"):
 				seta.modulate = Color(0,0,0,0)
-			state = true
+			state = 2
 		else:
 			if t >= 4.0:
 				for seta in get_tree().get_nodes_in_group("setas"):
 					seta.modulate = Color(1,1,1,fmod(t, 1.5))
 			move(true)
+		
 	pass
 
 func move(a):
