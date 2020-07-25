@@ -5,7 +5,7 @@ const vel_ang = 1
 const R = 236.0
 const R2 = 236.0
 const W = 2
-
+var teleport = preload("res://music/sfx/teleporte.wav")
 var p_morrer = 0.6
 var p_fase_aleatoria = 0.01
 var p_teleporte = 0.39
@@ -73,7 +73,6 @@ func _draw():
 		draw_line(pontos3[i], pontos3[(i+1)%pontos3.size()], Color(0,0,0,1), Espessura)
 	pass
 
-
 func _on_Buraco_Negro_body_entered(body):
 	if body.get_groups().has("player"):
 		var aux = body.tempo_magnetico/10.0 + body.num_col/10.0 + body.tempo_fora/10.0
@@ -82,6 +81,13 @@ func _on_Buraco_Negro_body_entered(body):
 		randomize()
 		var prob = randi()%1000/1000.0
 		print(prob)
+		# som de teleporte
+		if prob <= p_fase_aleatoria + p_teleporte:
+			var audio = AudioStreamPlayer.new()
+			add_child(audio)
+			audio.stream = teleport
+			audio.play()
+			
 		if prob <= p_fase_aleatoria:
 			print("Player passará para uma fase aleatória")
 		elif prob <= p_fase_aleatoria + p_teleporte:

@@ -3,7 +3,6 @@ extends Area2D
 onready var corpo_azul = preload("res://assets/Inimigos/corpo_ciclope_azul1.png")
 onready var corpo_vermelho = preload("res://assets/Inimigos/corpo_ciclope_vermelho1.png")
 
-
 onready var olho_azul = preload("res://assets/Inimigos/olho_ciclope_azul.png")
 onready var olho_vermelho = preload("res://assets/Inimigos/olho_ciclope_vermelho.png")
 
@@ -35,10 +34,8 @@ func _ready():
 		else:
 			$Sorriso.flip_v = false
 			$Caixa/Colisao.disabled = true
-			
 
 func _process(delta):
-	
 	for player in get_tree().get_nodes_in_group("player"):
 		if player.Charge == 0:
 			$Sorriso.texture = sorriso_reto
@@ -47,12 +44,10 @@ func _process(delta):
 			$Sorriso.texture = sorriso
 			$Sorriso.flip_v = (sign(player.Charge) == sign(carga))
 			$Caixa/Colisao.disabled = (sign(player.Charge) != sign(carga))
-			
 		
 		$Olho.position = centro_olho + sign(player.Charge)*sign(self.carga)*((self.position - player.global_position).normalized())*raio_olho
 		#print(centro_olho + sign(player.Charge)*sign(self.carga)*((self.position - player.position).normalized()))
 	pass
-
 
 func _on_Ciclope_body_entered(body):
 	if body.get_groups().has("player") and (sign(body.Charge) != sign(carga)):

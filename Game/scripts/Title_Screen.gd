@@ -1,10 +1,10 @@
 extends Node
  
-
 var t = 0.0
 var letra = 0
 var letras = []
-
+var play = true
+var thunder = preload("res://music/sfx/thunder.wav")
 #A fazer (to do): mudar o modulate das cargas com o tempo
 
 func _ready():
@@ -29,8 +29,13 @@ func _physics_process(delta):
 		letras[letra].self_modulate = Color(0.827451,0.788235,0.2,1)#Color(0xd3c933)
 		letra += 1
 		t = 0.0
-	$AnimationPlayer.play("twinkle")
-	
+	if letra >= 12 and play:
+		var audio = AudioStreamPlayer.new()
+		add_child(audio)
+		audio.stream = thunder
+		audio.play()
+		play = false
+	$AnimationPlayer.play("twinkle")	
 
 func _on_TextureButton_pressed():
 	$AudioStreamPlayer2.play()

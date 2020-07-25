@@ -117,4 +117,4 @@ func recebe_carga(valor):
 func morre(tipo):
 	
 	for no in get_tree().get_nodes_in_group("gui"):
-		no.perdeu(tipo)
+		no.perdeu(tipo)	
