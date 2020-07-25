@@ -8,6 +8,7 @@ export var Charge = 10
 export var Trilha = false
 export var Comprimento = 0.0
 export var Angulo = 0.0
+export var porcentagem_trilha = 0.0
 var posicao = Vector2()
 var gposicao = Vector2()
 
@@ -106,6 +107,17 @@ func trilha():
 	trilha1.show_behind_parent = true
 	trilha2.show_behind_parent = true
 	trilha3.show_behind_parent = true
+	
+	posicao = (2*porcentagem_trilha/100.0 - 1)*pos_trilha
+	
+	$Sprite.position = posicao
+	$Colisao.position = posicao
+	$Contato.position = posicao
+	
+	self.position -= posicao
+	gposicao = $Sprite.global_position
+	
+	
 	
 	
 func _on_Carga_mouse_entered():
