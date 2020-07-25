@@ -3,6 +3,8 @@ extends Control
 var menu = preload("res://scenes/Menu.tscn")
 var child
 var seleciona = preload("res://scripts/chooseLevel.gd").new()
+var win = preload("res://music/sfx/victory.wav")
+
 
 func _ready():
 	visible = false
@@ -37,7 +39,12 @@ func passou():
 	var num = ""
 	for i in range(5, nome.length()):
 		num = num+nome[i]
-		
+	var audio = AudioStreamPlayer.new()
+	add_child(audio)
+	audio.stream = win
+	audio.volume_db = -10
+	audio.play()
+	
 	seleciona.save(num, str(1))
 	
 	pause()
@@ -45,10 +52,11 @@ func passou():
 	#$TextureButton.queue_free()
 	pass
 
-func perdeu():
+func perdeu(tipo):
 	child.cria("perdeu")
 	visible = true
 	pause()
+		
 	#$TextureButton.visible = false
 	#$TextureButton.queue_free()
 	pass

@@ -14,6 +14,7 @@ var gposicao = Vector2()
 onready var scroll1 = preload("res://assets/scroll/scroll1.png")
 onready var scroll2 = preload("res://assets/scroll/scroll2.png")
 onready var scroll3 = preload("res://assets/scroll/scroll3.png")
+var zap = preload("res://music/sfx/choque.wav")
 
 var trilha1
 var trilha2
@@ -48,8 +49,7 @@ func _ready():
 func _input(event):
 	
 	if event is InputEventMouseButton and mouse_entrou and !event.is_pressed() and (event.button_index == BUTTON_RIGHT or (!Trilha and event.button_index == BUTTON_LEFT)):
-		Charge = -Charge
-		$Sprite.animation = "positive" if Charge > 0 else "negative"
+		change()
 			
 	elif Trilha and event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if event.is_pressed():
@@ -61,8 +61,7 @@ func _input(event):
 				ini_pos = event.position
 		else:
 			if segurando_mouse and (ini_pos - event.position).length() <= 1:
-				Charge = -Charge
-				$Sprite.animation = "positive" if Charge > 0 else "negative"
+				change()
 			segurando_mouse = false
 				
 		
@@ -115,3 +114,12 @@ func _on_Carga_mouse_entered():
 
 func _on_Carga_mouse_exited():
 	mouse_entrou = false
+	
+func change():
+	Charge = -Charge
+	$Sprite.animation = "positive" if Charge > 0 else "negative"
+	var audio = AudioStreamPlayer.new()
+	add_child(audio)
+	audio.stream = zap
+	audio.volume_db = -20
+	audio.play()
