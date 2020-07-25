@@ -30,6 +30,7 @@ position = Vector2( 465.61, 253.334 )
 script = ExtResource( 1 )
 Comprimento = 50.0
 Angulo = 12.0
+porcentagem_trilha = 50.0
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.449677, -0.449673 )
