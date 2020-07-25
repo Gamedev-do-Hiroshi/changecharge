@@ -11,6 +11,7 @@ var shock = preload("res://music/sfx/shock.wav")
 var music = preload("res://music/sfx/hiroshi_music.wav")
 var musica
 var mutado = false
+
 func _ready():
 	visible = false
 	child = menu.instance()
@@ -20,7 +21,13 @@ func _ready():
 	add_child(musica)
 	musica.stream = music
 	musica.volume_db = -20
-	musica.play()
+	load_preferences()
+	get_tree().call_group("music","mute", mutado)
+	print(mutado)
+	if mutado:
+		musica.stop()
+	else:
+		musica.play()
 	
 func _input(event):
 	if event.is_action_pressed("pause") and child.tipo == "pausa":
@@ -80,14 +87,39 @@ func perdeu(tipo):
 	#$TextureButton.visible = false
 	#$TextureButton.queue_free()
 	pass
-	
-
 
 func _on_TextureButton2_pressed():
 	mutado = !mutado
+	save_preferences()
 	get_tree().call_group("music","mute", mutado)
 	if mutado:
 		musica.stop()
 	else:
 		musica.play()
 	pass # Replace with function body.
+	
+func save():
+	var preferences = {
+		"music" : mutado
+	}
+	print(preferences)
+	return preferences
+
+func save_preferences():
+	var save_game = File.new()
+	save_game.open("user://preferences.save", File.WRITE)
+	save_game.store_line(to_json(save()))
+	save_game.close()
+	pass
+	
+func load_preferences():
+	var save_game = File.new()
+	if not save_game.file_exists("user://preferences.save"):
+		return
+	
+	save_game.open("user://preferences.save", File.READ)
+	while save_game.get_position() < save_game.get_len():        
+		var data = parse_json(save_game.get_line())
+		mutado = data["music"]
+	save_game.close()
+	pass

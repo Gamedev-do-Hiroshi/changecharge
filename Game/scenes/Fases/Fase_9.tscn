@@ -15,7 +15,6 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Objetos/Cerca_Eletrica.tscn" type="PackedScene" id=14]
 
-
 [node name="Fase_9" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -25,8 +24,6 @@ fase = 9
 [node name="quadro_negro" type="Sprite" parent="."]
 position = Vector2( 0, -2.27209 )
 offset = Vector2( 640, 360 )
-
-[node name="Pausa" parent="." instance=ExtResource( 4 )]
 
 [node name="Obstaculos" type="Node2D" parent="."]
 
@@ -218,8 +215,6 @@ rotation = 1.5708
 position = Vector2( 170.893, 156.053 )
 Charge = -50.0
 
-[node name="Pausa" parent="." instance=ExtResource( 4 )]
-
 [node name="Magnetico" parent="." instance=ExtResource( 5 )]
 position = Vector2( 671.788, 171.379 )
 B = 0.015
@@ -227,6 +222,8 @@ B = 0.015
 [node name="Magnetico2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 669.38, 584.098 )
 B = 0.015
+
+[node name="Pausa" parent="." instance=ExtResource( 4 )]
 
 [node name="Pilhas" type="Node2D" parent="."]
 position = Vector2( 515.651, 162.837 )
