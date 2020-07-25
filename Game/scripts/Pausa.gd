@@ -10,6 +10,7 @@ var succao = preload("res://music/sfx/succao-2.wav")
 var shock = preload("res://music/sfx/shock.wav")
 var music = preload("res://music/sfx/hiroshi_music.wav")
 var musica
+var mutado = false
 func _ready():
 	visible = false
 	child = menu.instance()
@@ -80,3 +81,13 @@ func perdeu(tipo):
 	#$TextureButton.queue_free()
 	pass
 	
+
+
+func _on_TextureButton2_pressed():
+	mutado = !mutado
+	get_tree().call_group("music","mute", mutado)
+	if mutado:
+		musica.stop()
+	else:
+		musica.play()
+	pass # Replace with function body.
