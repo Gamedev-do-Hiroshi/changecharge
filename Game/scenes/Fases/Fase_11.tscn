@@ -18,7 +18,7 @@
 [ext_resource path="res://assets/corposhi.png" type="Texture" id=16]
 [ext_resource path="res://scenes/Obstaculos/Lapis_preto.tscn" type="PackedScene" id=17]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
@@ -220,7 +220,7 @@ Comprimento = 100.0
 [node name="Sprite" type="AnimatedSprite" parent="cargas/Carga"]
 position = Vector2( -0.449677, -0.449673 )
 scale = Vector2( 0.345, 0.345 )
-frames = SubResource( 4 )
+frames = SubResource( 1 )
 animation = "negative"
 offset = Vector2( 0.5, 0.5 )
 
