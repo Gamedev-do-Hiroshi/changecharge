@@ -79,7 +79,6 @@ Charge = 200
 Trilha = true
 Comprimento = 100.0
 Angulo = 90.0
-porcentagem_trilha = 50.0
 
 [node name="Carga4" parent="Cargas" instance=ExtResource( 5 )]
 position = Vector2( 937.985, 474.177 )

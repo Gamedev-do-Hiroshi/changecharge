@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Obstaculos/Lapis.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Objetos/Pilha.tscn" type="PackedScene" id=2]
@@ -8,13 +8,16 @@
 [ext_resource path="res://scenes/Obstaculos/Giz.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/definicoes.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Carga.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/Objetos/Ponta.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/Ponta.png" type="Texture" id=9]
 [ext_resource path="res://scenes/Objetos/Tomada.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/Objetos/Fio.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/Camera.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Objetos/Cerca_Eletrica.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Pausa.tscn" type="PackedScene" id=15]
+
+[sub_resource type="ConcavePolygonShape2D" id=1]
+segments = PoolVector2Array( -34, 4, -7, 20, -34, -4, -4, -20, -33.5, 4, -33.5, -4, -10, -20, 12, -20, -10, 20, 12, 20, 13.5, 18, 13.5, -18, 14, -11, 32, -11, 14, -8, 32, -8, 14, 11, 32, 11, 14, 8, 32, 8 )
 
 [node name="Fase_3" type="Node2D"]
 script = ExtResource( 3 )
@@ -185,13 +188,17 @@ Charge = 50
 position = Vector2( 2543.32, 361.909 )
 rotation = -0.00130579
 
-[node name="Fio2" parent="Fios/Tomada" instance=ExtResource( 12 )]
-position = Vector2( 22.7009, -0.673401 )
-rotation = -3.14029
-
-[node name="Ponta" parent="Fios" instance=ExtResource( 9 )]
+[node name="Ponta" type="StaticBody2D" parent="Fios" groups=[
+"ponta",
+]]
 position = Vector2( 145.928, 376.312 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="Sprite" type="Sprite" parent="Fios/Ponta"]
+texture = ExtResource( 9 )
+
+[node name="Colisao" type="CollisionShape2D" parent="Fios/Ponta"]
+shape = SubResource( 1 )
 
 [node name="Fio" parent="Fios/Ponta" instance=ExtResource( 12 )]
 position = Vector2( -35.8753, 1.62201 )

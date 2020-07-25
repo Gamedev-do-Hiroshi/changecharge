@@ -36,7 +36,7 @@ func desbolck_all():
 	desblock_fase(maior + 1, 0)
 
 func _ready():
-#	reset()
+	#reset()
 	desbolck_all()
 	pass # Replace with function body.
 
