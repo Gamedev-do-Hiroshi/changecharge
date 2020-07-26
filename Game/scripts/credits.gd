@@ -27,32 +27,28 @@ var credits = [
 		"A game by Gamedev-Hiroshi"
 	],[
 		"Programming:",
-		"Rafarillo",
-		"Marcos",
-		"Davi",
-		"Hiroshi",
-		"Harada",
-		"Luciano",
-		"Irineu"
+		"Rafael Carvalho",
+		"Marcos Siolin",
+		"Davi Menezes",
+		"Willian Hiroshi",
+		"Lucas Harada",
+		"Luciano Leão",
+		"Lucas Irineu"
 	],[
 		"Art",
-		"Rafarillo",
-		"Marcos",
-		"Davi",
-		"Hiroshi",
-		"Harada",
-		"Luciano",
-		"Irineu"
+		"Rafael Carvalho",
+		"Marcos Siolin",
+		"Davi Menezes",
+		"Willian Hiroshi",
+		"Lucas Harada",
+		"Luciano Leão",
+		"Lucas Irineu"
 	],[
-		"Music",
-		"Davi",
-		"Luciano",
-		"Marcos"
-	],[
-		"Sound Effects",
-		"Davi",
-		"Luciano",
-		"Marcos"
+		"Music and Sound Effects",
+		"Luciano Leão",
+		"Marcos Siolin",
+		"Davi Menezes",
+		"Willian Hiroshi"
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
@@ -63,11 +59,6 @@ var credits = [
 		"https://www.pixilart.com/draw"
 		
 	],[
-		"Catch phrases",
-		"Só isso mesmo (by Luciano)",
-		"Eu comi o como (by Marcos)",
-		"Una-se ao exército (by Marcos)"
-	],[
 		" ",
 		" ",
 		" ",
@@ -86,7 +77,7 @@ var credits = [
 		" ",
 		" ",
 		" ",
-		"Comi o cu de quem ta lendo"
+		"Só isso mesmo (by Luciano Leão)"
 	]
 ]
 
