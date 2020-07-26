@@ -135,3 +135,7 @@ func reset():
 	
 	file.store_string("")
 	file.close()
+
+
+func _on_TextureButton_pressed():
+	get_tree().change_scene("res://scenes/credits.tscn")

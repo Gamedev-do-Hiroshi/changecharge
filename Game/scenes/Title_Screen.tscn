@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/Title_Screen.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Back_ground.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Sprites/Main Menu/lightning.png" type="Texture" id=6]
 [ext_resource path="res://music/main_menu.wav" type="AudioStream" id=7]
 [ext_resource path="res://music/select.wav" type="AudioStream" id=8]
-[ext_resource path="res://icon.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Main Menu/play_button_on_hover.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Main Menu/exit_button_on_hover.png" type="Texture" id=12]
 
@@ -88,21 +87,6 @@ texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 12 )
 expand = true
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton3" type="TextureButton" parent="."]
-anchor_left = 0.462
-anchor_top = 0.889
-anchor_right = 0.519
-anchor_bottom = 0.989
-margin_left = 0.640015
-margin_top = -0.0800171
-margin_right = -0.320068
-margin_bottom = -0.0800171
-texture_normal = ExtResource( 9 )
-expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -315,4 +299,3 @@ autoplay = true
 stream = ExtResource( 8 )
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
-[connection signal="pressed" from="TextureButton3" to="." method="_on_TextureButton3_pressed"]
