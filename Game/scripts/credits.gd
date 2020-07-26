@@ -67,6 +67,26 @@ var credits = [
 		"Só isso mesmo (by Luciano)",
 		"Eu comi o como (by Marcos)",
 		"Una-se ao exército (by Marcos)"
+	],[
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		" ",
+		"Comi o cu de quem ta lendo"
 	]
 ]
 
@@ -110,7 +130,7 @@ func finish():
 		finished = true
 		# NOTE: This is called when the credits finish
 		# - Hook up your code to return to the relevant scene here, eg...
-		#get_tree().change_scene("res://scenes/MainMenu.tscn")
+		get_tree().change_scene("res://scenes/Title_Screen.tscn")
 
 
 func add_line():
@@ -129,7 +149,7 @@ func add_line():
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_escape"):
 		finish()
 	if event.is_action_pressed("ui_down") and !event.is_echo():
 		speed_up = true

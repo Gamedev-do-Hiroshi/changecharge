@@ -18,10 +18,10 @@
 [ext_resource path="res://scenes/Obstaculos/Lapis.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/Inimigos/Ciclope.tscn" type="PackedScene" id=17]
 
-[node name="Fase_12" type="Node2D"]
+[node name="Fase_13" type="Node2D"]
 
 [node name="Definicoes" parent="." instance=ExtResource( 10 )]
-fase = 12
+fase = 13
 limite_dir = 2560
 
 [node name="quadro_negro" type="Sprite" parent="."]
