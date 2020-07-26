@@ -4,13 +4,13 @@ Change Charge is a puzzle game about charges made by @Gamedev-do-Hiroshi organiz
 
 # Developers
 A game made by:
-- Luciano Leão (@LeaoLuciano)
-- Marcos Siolin (@siolinm)
-- Davi Menezes (@davimp)
-- Willian Hiroshi (@willhiroshi)
-- Lucas Harada (@Lucas3H)
-- Rafael Carvalho (@rafarillo)
-- Lucas Irineu (@lirineu)
+- Luciano Leão ([@LeaoLuciano](https://github.com/LeaoLuciano))
+- Marcos Siolin ([@siolinm](https://github.com/siolinm))
+- Davi Menezes ([@davimp](https://github.com/davimp))
+- Willian Hiroshi ([@willhiroshi](https://github.com/willhiroshi))
+- Lucas Harada ([@Lucas3H](https://github.com/Lucas3H))
+- Rafael Carvalho ([@rafarillo](https://github.com/rafarillo))
+- Lucas Irineu ([@lirineu](https://github.com/lirineu))
 # Objects
 
 ## Charge-Chan
