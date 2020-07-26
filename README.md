@@ -1,6 +1,6 @@
 # ![Charge-Chan](Game/icon.png) changecharge 
 
-Change Charge is a puzzle game about charges made by @Gamedev-do-Hiroshi organization. The goal is to take Charge-Chan (the main character) from the power cable to the power plug avoiding many obstacles in the way.
+Change Charge is a puzzle game about charges made by [@Gamedev-do-Hiroshi](https://github.com/Gamedev-do-Hiroshi) organization. The goal is to take Charge-Chan (the main character) from the power cable to the power plug avoiding many obstacles in the way.
 
 # Developers
 A game made by:
