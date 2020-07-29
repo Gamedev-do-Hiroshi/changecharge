@@ -24,6 +24,10 @@ config/name="Change Charge"
 run/main_scene="res://scenes/Title_Screen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Network="*res://scripts/Network.gd"
+
 [display]
 
 window/size/width=1280
