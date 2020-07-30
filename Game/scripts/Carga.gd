@@ -56,20 +56,27 @@ func _ready():
 
 func _physics_process(delta):
 	if is_network_master():
-		rset('posicao', posicao)
+		#rset('posicao', posicao)
+		#rset_unreliable('posicao', posicao)
 		pass
 	else:
 		pass
 	if get_tree().is_network_server():
-		if prepara_mudar:
-			print("MUDOU")
-			change()
-			prepara_mudar = false
 		#Network.update_position(int(name), posicao)
 		#rset_unreliable('posicao', posicao)
 #		Network.players[int(name)].posicao = posicao
 #		Network.players[int(name)].Charge = Charge
-	pass
+		Network.players[get_tree().get_network_unique_id()].pepara_mudar = prepara_mudar
+		pass
+	if prepara_mudar:
+		print("MUDOU")
+		change()
+		prepara_mudar = false
+	$Sprite.position = posicao
+	$Colisao.position = posicao
+	$Contato.position = posicao
+	
+	gposicao = $Sprite.global_position
 
 func _input(event):
 	
@@ -162,6 +169,12 @@ func change():
 	audio.stream = zap
 	audio.volume_db = -20
 	audio.play()
-	
-	rset("prepara_mudar", true)
+	if prepara_mudar == false:
+		if is_network_master():
+			rset_config("prepara_mudar", MultiplayerAPI.RPC_MODE_REMOTE)
+			rset("prepara_mudar", true)
+		else:
+			rset_config("prepara_mudar", MultiplayerAPI.RPC_MODE_REMOTE)
+			rset("prepara_mudar", true)
+		#rset_unreliable("prepara_mudar", true)
 	prepara_mudar = false
