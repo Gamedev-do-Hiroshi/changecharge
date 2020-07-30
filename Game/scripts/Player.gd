@@ -74,6 +74,9 @@ func _physics_process(delta):
 		num_col += self.get_slide_count()
 	$Aura.self_modulate = Color(1, 1, 1, 0.8*cos(5*t) + 0.2)
 	
+#	if get_tree().is_network_server():
+#		Network.update_position(int(name), position)
+	
 func movimento(delta):
 	
 	ant_ace = ace

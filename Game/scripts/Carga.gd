@@ -29,6 +29,8 @@ var aux
 var pos_trilha = Vector2()
 var defasagem = Vector2()
 
+var prepara_mudar = false
+
 func spark(dist,player):
 	if dist <= 100:
 		$Lighning.bolt(position,player)
@@ -46,8 +48,33 @@ func _ready():
 	posicao = self.position
 	gposicao = self.global_position
 	defasagem = Vector2()
+	
+	prepara_mudar = false
+	
+#	if get_tree().is_network_server() and is_network_master():
+#		Network.players[int(name)] = self
+
+func _physics_process(delta):
+	if is_network_master():
+		rset('posicao', posicao)
+		pass
+	else:
+		pass
+	if get_tree().is_network_server():
+		if prepara_mudar:
+			print("MUDOU")
+			change()
+			prepara_mudar = false
+		#Network.update_position(int(name), posicao)
+		#rset_unreliable('posicao', posicao)
+#		Network.players[int(name)].posicao = posicao
+#		Network.players[int(name)].Charge = Charge
+	pass
 
 func _input(event):
+	
+#	if get_tree().is_network_server() and is_network_master():
+#		return
 	
 	if event is InputEventMouseButton and mouse_entrou and !event.is_pressed() and (event.button_index == BUTTON_RIGHT or (!Trilha and event.button_index == BUTTON_LEFT)):
 		change()
@@ -75,6 +102,7 @@ func _input(event):
 		$Sprite.position = posicao
 		$Colisao.position = posicao
 		$Contato.position = posicao
+	
 	gposicao = $Sprite.global_position
 
 func trilha():
@@ -134,3 +162,6 @@ func change():
 	audio.stream = zap
 	audio.volume_db = -20
 	audio.play()
+	
+	rset("prepara_mudar", true)
+	prepara_mudar = false
