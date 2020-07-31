@@ -1,7 +1,7 @@
 extends Node
 
-const DEFAULT_IP = 'localhost'
-const DEFAULT_PORT = 34343
+var DEFAULT_IP = 'localhost'
+var DEFAULT_PORT = 34343
 const MAX_PLAYERS = 5
 
 var players = { }
@@ -56,12 +56,16 @@ remote func _request_players(request_from_id):
 remote func _send_player_info(id, info):
 	print("aqui: ", id, " ", info)
 	players[id] = info
-	var new_player = load('res://scenes/Player.tscn').instance()
-	new_player.name = str(id)
-	new_player.set_network_master(id)
-	new_player.position = Vector2(640+300, 360+300)
-	$'/root/Futebol/'.add_child(new_player)
+#	var new_player = load('res://scenes/Player.tscn').instance()
+#	new_player.name = str(id)
+#	new_player.set_network_master(id)
+#	new_player.position = Vector2(640+300, 360+300)
+#	$'/root/Futebol/'.add_child(new_player)
 	#new_player.init(info.name, info.position, true)
 
 func update_position(id, position):
 	players[id].position = position
+	
+func define(ip, porta):
+	DEFAULT_IP = ip
+	DEFAULT_PORT = int(porta)

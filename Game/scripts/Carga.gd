@@ -30,6 +30,9 @@ var pos_trilha = Vector2()
 var defasagem = Vector2()
 
 var prepara_mudar = false
+var online = false
+
+var frames_mudou = 10
 
 func spark(dist,player):
 	if dist <= 100:
@@ -45,14 +48,20 @@ func _ready():
 		contador = 0
 	
 	segurando_mouse = false
-	posicao = self.position
+	#posicao = Vector2()#self.position
 	gposicao = self.global_position
 	defasagem = Vector2()
 	
 	prepara_mudar = false
 	
-#	if get_tree().is_network_server() and is_network_master():
-#		Network.players[int(name)] = self
+	online = true
+	
+	if online:
+		rset_config("prepara_mudar", MultiplayerAPI.RPC_MODE_REMOTE)
+		rset_config("posicao", MultiplayerAPI.RPC_MODE_REMOTE)
+		rset_config("position", MultiplayerAPI.RPC_MODE_REMOTE)
+		rset_config("Charge", MultiplayerAPI.RPC_MODE_REMOTE)
+		frames_mudou = 10
 
 func _physics_process(delta):
 	if is_network_master():
@@ -69,14 +78,23 @@ func _physics_process(delta):
 		Network.players[get_tree().get_network_unique_id()].pepara_mudar = prepara_mudar
 		pass
 	if prepara_mudar:
-		print("MUDOU")
 		change()
 		prepara_mudar = false
-	$Sprite.position = posicao
-	$Colisao.position = posicao
-	$Contato.position = posicao
+		
+	if online:
+		if is_network_master():
+			rset("posicao", posicao)
+			rset("position", position)
+			rset("Charge", Charge)
+		$Sprite.position = posicao
+		$Colisao.position = posicao
+		$Contato.position = posicao
 	
 	gposicao = $Sprite.global_position
+
+func _process(delta):
+	if $Sprite.animation != ("positive" if Charge > 0 else "negative"):# and frames_mudou > 1:
+		$Sprite.animation = ("positive" if Charge > 0 else "negative")
 
 func _input(event):
 	
@@ -109,8 +127,11 @@ func _input(event):
 		$Sprite.position = posicao
 		$Colisao.position = posicao
 		$Contato.position = posicao
+		if online:
+			rset("posicao", posicao)
 	
 	gposicao = $Sprite.global_position
+	frames_mudou += 1
 
 func trilha():
 	
@@ -169,12 +190,9 @@ func change():
 	audio.stream = zap
 	audio.volume_db = -20
 	audio.play()
-	if prepara_mudar == false:
-		if is_network_master():
-			rset_config("prepara_mudar", MultiplayerAPI.RPC_MODE_REMOTE)
-			rset("prepara_mudar", true)
-		else:
-			rset_config("prepara_mudar", MultiplayerAPI.RPC_MODE_REMOTE)
-			rset("prepara_mudar", true)
+	
+	if online and prepara_mudar == false:
+		rset("prepara_mudar", true)
 		#rset_unreliable("prepara_mudar", true)
 	prepara_mudar = false
+	frames_mudou = 0

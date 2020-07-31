@@ -12,6 +12,12 @@ position = Vector2( 640, 360 )
 
 [node name="Carga" parent="." instance=ExtResource( 1 )]
 position = Vector2( 940, 360 )
+Trilha = true
+Comprimento = 200.0
+Angulo = 0.0
 
 [node name="Carga2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 340, 360 )
+Trilha = true
+Comprimento = 200.0
+Angulo = 0.0
