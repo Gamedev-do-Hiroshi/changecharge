@@ -1,23 +1,154 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Carga.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Futebol.gd" type="Script" id=3]
+[ext_resource path="res://assets/Backgrounds/quadro_negro.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/font/ImPerfect23.otf" type="DynamicFontData" id=5]
+
+[sub_resource type="ConcavePolygonShape2D" id=1]
+segments = PoolVector2Array( 0, 0, 1280, 0, 0, 0, 0, 720, 0, 720, 1280, 720, 1280, 720, 1280, 0 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 112.516 )
 
 [node name="Futebol" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+offset = Vector2( 640, 360 )
+
+[node name="Cargas" type="Node2D" parent="."]
+
+[node name="Carga" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 940, 360 )
+Charge = 100
+Trilha = true
+Comprimento = 200.0
+Angulo = 0.0
+online = true
+time = "2"
+
+[node name="Carga7" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 193.602, 221.108 )
+Charge = 100
+Trilha = true
+Comprimento = 200.0
+Angulo = 0.0
+online = true
+time = "2"
+
+[node name="Carga8" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 193.602, 491.71 )
+Charge = 100
+Trilha = true
+Comprimento = 200.0
+Angulo = 0.0
+online = true
+time = "2"
+
+[node name="Carga5" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 1260.97, 200.058 )
+Charge = 100
+Comprimento = 200.0
+Angulo = 0.0
+online = true
+time = "2"
+
+[node name="Carga6" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 1260.97, 513.659 )
+Charge = 100
+Comprimento = 200.0
+Angulo = 0.0
+online = true
+time = "2"
+
+[node name="Carga2" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 340, 360 )
+Charge = 100
+Trilha = true
+Comprimento = 200.0
+Angulo = 0.0
+online = true
+
+[node name="Carga9" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 1094.6, 221.108 )
+Charge = 100
+Trilha = true
+Comprimento = 200.0
+Angulo = 0.0
+online = true
+
+[node name="Carga10" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 1094.6, 491.71 )
+Charge = 100
+Trilha = true
+Comprimento = 200.0
+Angulo = 0.0
+online = true
+
+[node name="Carga3" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 16.5876, 200.058 )
+Charge = 100
+Comprimento = 200.0
+Angulo = 0.0
+online = true
+
+[node name="Carga4" parent="Cargas" instance=ExtResource( 1 )]
+position = Vector2( 16.5876, 513.659 )
+Charge = 100
+Comprimento = 200.0
+Angulo = 0.0
+online = true
+
+[node name="Bordas" type="StaticBody2D" parent="."]
+
+[node name="Colisao" type="CollisionShape2D" parent="Bordas"]
+shape = SubResource( 1 )
+
+[node name="Placar1" type="Label" parent="."]
+margin_left = 475.0
+margin_top = 45.0
+margin_right = 515.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Placar2" type="Label" parent="."]
+margin_left = 747.259
+margin_top = 45.0
+margin_right = 799.259
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trave1" type="Area2D" parent="."]
+position = Vector2( 16.5876, 360 )
+
+[node name="Colisao" type="CollisionShape2D" parent="Trave1"]
+scale = Vector2( 0.962926, 1.37773 )
+shape = SubResource( 3 )
+
+[node name="Trave2" type="Area2D" parent="."]
+position = Vector2( 1260.97, 360 )
+
+[node name="Colisao" type="CollisionShape2D" parent="Trave2"]
+scale = Vector2( 0.962926, 1.37773 )
+shape = SubResource( 3 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 640, 360 )
-
-[node name="Carga" parent="." instance=ExtResource( 1 )]
-position = Vector2( 940, 360 )
-Trilha = true
-Comprimento = 200.0
-Angulo = 0.0
-
-[node name="Carga2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 340, 360 )
-Trilha = true
-Comprimento = 200.0
-Angulo = 0.0
+Charge = 100.0
+[connection signal="body_entered" from="Trave1" to="." method="_on_Trave1_body_entered"]
+[connection signal="body_entered" from="Trave2" to="." method="_on_Trave2_body_entered"]

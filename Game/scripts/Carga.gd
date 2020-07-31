@@ -30,7 +30,8 @@ var pos_trilha = Vector2()
 var defasagem = Vector2()
 
 var prepara_mudar = false
-var online = false
+export var online = false
+export(String, "1", "2") var time = "1"
 
 var frames_mudou = 10
 
@@ -53,8 +54,6 @@ func _ready():
 	defasagem = Vector2()
 	
 	prepara_mudar = false
-	
-	online = true
 	
 	if online:
 		rset_config("prepara_mudar", MultiplayerAPI.RPC_MODE_REMOTE)
@@ -98,8 +97,8 @@ func _process(delta):
 
 func _input(event):
 	
-#	if get_tree().is_network_server() and is_network_master():
-#		return
+	if online and ((is_network_master() and time == "2") or (!is_network_master() and time == "1")):
+		return
 	
 	if event is InputEventMouseButton and mouse_entrou and !event.is_pressed() and (event.button_index == BUTTON_RIGHT or (!Trilha and event.button_index == BUTTON_LEFT)):
 		change()
