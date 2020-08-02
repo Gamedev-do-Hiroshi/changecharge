@@ -29,6 +29,12 @@ var aux
 var pos_trilha = Vector2()
 var defasagem = Vector2()
 
+var prepara_mudar = false
+export var online = false
+export(String, "1", "2") var time = "1"
+
+var frames_mudou = 10
+
 func spark(dist,player):
 	if dist <= 100:
 		$Lighning.bolt(position,player)
@@ -43,11 +49,56 @@ func _ready():
 		contador = 0
 	
 	segurando_mouse = false
-	posicao = self.position
+	#posicao = Vector2()#self.position
 	gposicao = self.global_position
 	defasagem = Vector2()
+	
+	prepara_mudar = false
+	
+	if online:
+		rset_config("prepara_mudar", MultiplayerAPI.RPC_MODE_REMOTE)
+		rset_config("posicao", MultiplayerAPI.RPC_MODE_REMOTE)
+		rset_config("position", MultiplayerAPI.RPC_MODE_REMOTE)
+		rset_config("Charge", MultiplayerAPI.RPC_MODE_REMOTE)
+		frames_mudou = 10
+
+func _physics_process(delta):
+	if is_network_master():
+		#rset('posicao', posicao)
+		#rset_unreliable('posicao', posicao)
+		pass
+	else:
+		pass
+	if get_tree().is_network_server():
+		#Network.update_position(int(name), posicao)
+		#rset_unreliable('posicao', posicao)
+#		Network.players[int(name)].posicao = posicao
+#		Network.players[int(name)].Charge = Charge
+		Network.players[get_tree().get_network_unique_id()].pepara_mudar = prepara_mudar
+		pass
+	if prepara_mudar:
+		change()
+		prepara_mudar = false
+		
+	if online:
+		if is_network_master():
+			rset("posicao", posicao)
+			rset("position", position)
+			rset("Charge", Charge)
+		$Sprite.position = posicao
+		$Colisao.position = posicao
+		$Contato.position = posicao
+	
+	gposicao = $Sprite.global_position
+
+func _process(delta):
+	if $Sprite.animation != ("positive" if Charge > 0 else "negative"):# and frames_mudou > 1:
+		$Sprite.animation = ("positive" if Charge > 0 else "negative")
 
 func _input(event):
+	
+	if online and ((is_network_master() and time == "2") or (!is_network_master() and time == "1")):
+		return
 	
 	if event is InputEventMouseButton and mouse_entrou and !event.is_pressed() and (event.button_index == BUTTON_RIGHT or (!Trilha and event.button_index == BUTTON_LEFT)):
 		change()
@@ -75,7 +126,11 @@ func _input(event):
 		$Sprite.position = posicao
 		$Colisao.position = posicao
 		$Contato.position = posicao
+		if online:
+			rset("posicao", posicao)
+	
 	gposicao = $Sprite.global_position
+	frames_mudou += 1
 
 func trilha():
 	
@@ -134,3 +189,9 @@ func change():
 	audio.stream = zap
 	audio.volume_db = -20
 	audio.play()
+	
+	if online and prepara_mudar == false:
+		rset("prepara_mudar", true)
+		#rset_unreliable("prepara_mudar", true)
+	prepara_mudar = false
+	frames_mudou = 0

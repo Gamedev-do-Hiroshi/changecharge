@@ -40,6 +40,8 @@ onready var A_AURA = preload("res://assets/aura_azul.png")
 
 var menu = preload("res://scenes/Menu.tscn")
 
+var online = false
+
 func _ready():
 	
 	primeira_passada = true
@@ -53,6 +55,12 @@ func _ready():
 	t = 0.0
 	tempo_magnetico = 0.0
 	num_col = 0
+	
+	online = true
+	
+	if online:
+		rset_config("position", MultiplayerAPI.RPC_MODE_REMOTE)
+		rset_config("rotation", MultiplayerAPI.RPC_MODE_REMOTE)
 #	set_process_input(true)
 
 #func _input(event):
@@ -73,6 +81,9 @@ func _physics_process(delta):
 		vel = (self.position - ant_pos)/delta
 		num_col += self.get_slide_count()
 	$Aura.self_modulate = Color(1, 1, 1, 0.8*cos(5*t) + 0.2)
+	
+#	if get_tree().is_network_server():
+#		Network.update_position(int(name), position)
 	
 func movimento(delta):
 	
@@ -105,6 +116,13 @@ func movimento(delta):
 	$Sprite.flip_h = direcao.x > 0
 	
 	#self.position += vel * delta
+	
+	
+	if online:
+		if is_network_master():
+			rset("position", position)
+			rset("rotation", rotation)
+	
 
 func recebe_carga(valor):
 	Charge += valor
