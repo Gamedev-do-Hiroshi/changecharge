@@ -4,6 +4,7 @@ var dialog = ["Hi, my name is Charge-Chan [Press Enter to continue]", "I touch m
 
 var dialog_index = 0
 var finished = false
+var FD = false
 
 func _ready():
 	$Sprite/AnimationPlayer.play("IDLE")
@@ -26,7 +27,9 @@ func load_dialog():
 		print("Mudei o state")
 		for fase in get_tree().get_nodes_in_group("fase"):
 			fase.state = 1
+		FD = true
 	dialog_index+=1
+
 
 
 
