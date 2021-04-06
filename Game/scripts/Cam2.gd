@@ -9,9 +9,12 @@ var _moveCamera: bool = false;
 
 onready var objeto = $Pivot
 var pai_objeto
+var dist
 
 func _ready():
 	
+	dist = get_tree().get_nodes_in_group("dist")[0]
+	dist.cam = self
 	
 	for no in get_tree().get_nodes_in_group("definicoes"):
 		self.limit_left = no.limite_esq
@@ -45,6 +48,7 @@ func _unhandled_input(event: InputEvent):
 		_previousPosition = event.position;
 	elif event is InputEventKey and event.scancode == KEY_F and !self.is_current():
 		self.make_current()
+		dist.cam = self
 
 
 func mover_ativo():

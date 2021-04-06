@@ -20,8 +20,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Change Charge"
-run/main_scene="res://interface/Menu.tscn"
+config/name="Change Charge 1.1"
+run/main_scene="res://scenes/Title_Screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
