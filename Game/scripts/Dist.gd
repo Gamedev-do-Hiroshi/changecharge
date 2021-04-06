@@ -20,6 +20,10 @@ func _ready():
 #		MAXV = no.limite_baixo
 
 func _process(delta):
+	if cam != null:
+		mostra()
+
+func mostra():
 	dist =  player.global_position - cam.get_camera_screen_center() + Vector2(MAXH, MAXV)/2.0
 	aux = dist
 	
